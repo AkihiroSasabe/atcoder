@@ -1,0 +1,52 @@
+use proconio::input;
+use itertools::Itertools;
+use std::cmp::{max, min};
+use std::cmp::Ordering;
+use std::collections::VecDeque;
+use std::collections::BinaryHeap;
+use std::collections::HashMap;
+use proconio::marker::Chars;
+use std::f64::consts::PI;
+use std::mem::swap;
+use superslice::*;
+fn main() {
+    input! {
+        n: usize,
+        mut a: [usize; n]
+    }
+    
+    a.sort();
+    let mut flag = true;
+    let mut i = 0;
+    let mut commic = 0;
+    while i < a.len() {
+        println!("a: {:?}", a);
+        // println!("commic: {}, i: {}", commic, i);
+        if a[0] == commic + 1 {
+            commic += 1;
+            a.remove(i);
+            a.push(commic);
+        }
+        else {
+            if a.len() >= 2 {
+                a.pop();
+            }
+            else {
+                break
+            }
+            if a.len() >= 2 {
+                a.pop();
+                commic += 1;
+                a.push(commic);
+                println!("pop!!");
+            }
+            else {
+                break
+            }
+        }
+    }
+    println!("{}", commic);
+
+
+
+}

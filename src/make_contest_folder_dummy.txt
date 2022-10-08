@@ -1,0 +1,5 @@
+使い方: 
+$ cargo rub --bin make_contest_folder <ABCの回数名>
+
+例: abc44を解くなら
+$ cargo rub --bin make_contest_folder <44>

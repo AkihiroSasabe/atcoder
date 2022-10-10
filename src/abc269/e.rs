@@ -12,39 +12,45 @@ use std::mem::swap;
 use superslice::*;
 use std::io::{stdin, stdout, BufReader, Write};
 
+// テストケース: 01_small_01.txt
+// 2
+// -1 1
+// x x
+// o x
+// ! 1 2
 
+// テストケース: 
+// xox
+// xxo
+// xxx
+// ! 1 3
 
-xx
-ox
-
-// 
-xox
-xxo
-xxx
-!1 3
-
-
+fn read() -> usize {
+    let mut s = String::new();
+    std::io::stdin().read_line(&mut s).unwrap();
+    s.trim().parse().unwrap()
+}
 
 fn main() {
     // https://atcoder.jp/contests/abc244/editorial/3625 の解説
-    // インタラクティブな問題では下記2行が必須。
-    // proconio (doc) を使っているユーザが多いと思われますが、これは --release とそうでないときで挙動が異なります。 
-    // 具体的には、--release のときは「入力を一通り読んでから処理を行う」のに対し、そうでないときは一行ずつ読んで処理を行います。
-    // また、println!の後にflashもする必要がある。
-    
-    let stdin = stdin();
-    let mut source = LineSource::new(BufReader::new(stdin.lock()));
-
-    // debug
-    input! {
-        from &mut source,
-        n: usize
-    }
+    // インタラクティブな問題でproconioを使うときは下記2行が必須。
+    // let stdin = stdin();
+    // let mut source = LineSource::new(BufReader::new(stdin.lock()));
+    // さらにinput!する変数名の上の行に from &mut source, も必要。
+    // (例)
     // input! {
     //     from &mut source,
-    //     matrix: [[char; n]; n]
+    //     n: usize
     // }
-    // let xy = get_xy(&matrix, n);
+
+    // proconio (doc) を使っているユーザが多いと思われますが、これは --release とそうでないときで挙動が異なります。 
+    // 具体的には、--release のときは「入力を一通り読んでから処理を行う」のに対し、そうでないときは一行ずつ読んで処理を行います。
+    // また、println!の後に下記でflashもする必要がある。
+    // stdout().flush().unwrap();
+    // => めんどくさすぎる。後ろにflash入れるのは、忘れてミスる原因になりかねない。
+    // 【結論】素直にproconioを使わずにstd::io::stdin().read_line()を使うべし。
+    
+    let n = read();
 
     // yの場所を特定する
     // めぐる式2分探索: ok以上の座標に、空きマスがある
@@ -53,12 +59,7 @@ fn main() {
     while ng > ok + 1 {
         let mid = (ok + ng) / 2;
         println!("? {} {} {} {}", mid, n, 1, n);
-        stdout().flush().unwrap();
-        input! {
-            from &mut source,
-            t: usize
-        }
-        // let t = get_num_by_y(&xy, mid, n);
+        let t = read();
         // println!("ok:{} ng:{} mid:{}", ok, ng, mid);
         // 空きマスがないとき
         if (n + 1) - mid == t {
@@ -81,12 +82,7 @@ fn main() {
     while ng > ok + 1 {
         let mid = (ok + ng) / 2;
         println!("? {} {} {} {}", 1, n, mid, n);
-        stdout().flush().unwrap();
-        input! {
-            from &mut source,
-            t: usize
-        }
-        // let t = get_num_by_x(&xy, mid, n);
+        let t = read();        
         // println!("ok:{} ng:{} mid:{}", ok, ng, mid);
         // 空きマスがないとき
         if (n + 1) - mid == t {
@@ -101,51 +97,5 @@ fn main() {
         // println!("ok:{} ng:{} mid:{}", ok, ng, mid);
     }
     let x = ok;
-    println!("! {} {}", x, y);
-    stdout().flush().unwrap();
-    // if x == xy[0] && y == xy[1] {
-    //     println!("ok!!");
-    // }
-    // else {
-    //     println!("bug!! =======================");
-    // }
-
-}
-
-fn get_xy(matrix: &Vec<Vec<char>>, n: usize) -> Vec<usize> {
-    let mut flag = false;
-    let mut x = n;
-    let mut y = n;
-    for i in 0..n {
-        for j in 0..n {
-            if matrix[i][j] == '_' {
-                y = i;
-                x = j;
-                flag = true;
-                break
-            }
-        }
-        if flag {
-            break
-        }
-    }
-    return vec![x+1, y+1]
-}
-
-fn get_num_by_x(xy: &Vec<usize>, xs: usize, xe: usize) -> usize {
-    let x = xy[0];
-    let mut ans = xe - xs + 1;
-    if xs <= x && x <= xe {
-        ans -= 1;
-    }
-    return ans
-}
-
-fn get_num_by_y(xy: &Vec<usize>, ys: usize, ye: usize) -> usize {
-    let y = xy[1];
-    let mut ans = ye - ys + 1;
-    if ys <= y && y <= ye {
-        ans -= 1;
-    }
-    return ans
+    println!("! {} {}", y, x);
 }

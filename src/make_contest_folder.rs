@@ -34,7 +34,26 @@ fn main() {
 
         // ***.rsに書き込む内容
         // proconioを必ず使うので用意
-        let content0 = String::from("use proconio::input;\nuse itertools::Itertools;\nuse std::cmp::{max, min};\nuse std::cmp::Ordering;\nuse std::collections::VecDeque;\nuse std::collections::BinaryHeap;\nuse std::collections::HashMap;\nuse proconio::marker::Chars;\nuse std::f64::consts::PI;\nuse std::mem::swap;\nuse superslice::*;\nfn main() {\n    input! {\n        \n    }\n}");
+        let content0 = String::from(
+"#![allow(dead_code, unused_imports)]
+use proconio::input;
+use itertools::Itertools;
+use std::cmp::{max, min};
+use std::cmp::Ordering;
+use std::collections::VecDeque;
+use std::collections::BinaryHeap;
+use std::collections::HashMap;
+use std::collections::HashSet;
+use proconio::marker::Chars;
+use std::f64::consts::PI;
+use std::mem::swap;
+use superslice::*;
+fn main() {
+    input! {
+        
+    }
+}"
+        );
         let content0_b = content0.as_bytes();
 
         // Cargo.tomlに書き込む内容

@@ -10,4 +10,5 @@
 CONTEST_NAME=$(echo `pwd` | rev | cut -f -1 -d "/" | rev )
 
 echo $CONTEST_NAME
-cargo run --bin ${CONTEST_NAME}_${1}
+RUST_BACKTRACE=1
+RUST_BACKTRACE=1 cargo run --bin ${CONTEST_NAME}_${1}

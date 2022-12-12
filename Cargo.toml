@@ -1165,3 +1165,35 @@ path = "src/abc280/g.rs"
 [[bin]]
 name = "abc280_h"
 path = "src/abc280/h.rs"
+
+[[bin]]
+name = "abc281_a"
+path = "src/abc281/a.rs"
+
+[[bin]]
+name = "abc281_b"
+path = "src/abc281/b.rs"
+
+[[bin]]
+name = "abc281_c"
+path = "src/abc281/c.rs"
+
+[[bin]]
+name = "abc281_d"
+path = "src/abc281/d.rs"
+
+[[bin]]
+name = "abc281_e"
+path = "src/abc281/e.rs"
+
+[[bin]]
+name = "abc281_f"
+path = "src/abc281/f.rs"
+
+[[bin]]
+name = "abc281_g"
+path = "src/abc281/g.rs"
+
+[[bin]]
+name = "abc281_h"
+path = "src/abc281/h.rs"

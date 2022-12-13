@@ -15,8 +15,13 @@ fn main() {
     input! {
         n: usize,
         m: usize,
-        a: [usize; n],
+        mut a: [usize; n],
     }
+
+    a.sort();
+    println!("{:?}", a);
+
+    // HashMap<キーとなる数字, その和=ある数字x個数>
     let mut hash_map = HashMap::new();
     for i in 0..a.len() {
         if hash_map.contains_key(&a[i]) {
@@ -26,6 +31,9 @@ fn main() {
             hash_map.insert(a[i], a[i]);
         }
     }
+
+
+    // 遷移できるカード同士を表すグラフ
     let mut graph: HashMap<usize, Vec<usize>> = HashMap::new();
     for (k, v) in &hash_map {
         if hash_map.contains_key(&((*k + 1) % m)) {

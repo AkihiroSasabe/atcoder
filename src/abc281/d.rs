@@ -21,6 +21,7 @@ fn main() {
 
     let INF: usize = 1_000_000_000_000;
 
+    // dp[n][k][d]:= A[0:n+1]の数列からk個の項を選んだ和が、Dで割った余りがdになる時の、その和の最大値 (不可能ならINFを格納)
     let mut dp = vec![vec![vec![INF; d]; k+1]; n];
 
     dp[0][0][0] = 0;
@@ -36,7 +37,7 @@ fn main() {
             for dd in 0..d {
                 // 上から下への遷移
                 if dp[nn-1][kk][dd] != INF {
-                    if dp[nn][kk][dd] == INF {
+                    if dp[nn][kk][dd] == INF {  
                         dp[nn][kk][dd] = dp[nn-1][kk][dd];
                         // if nn == 1 && kk == 1 && dd == 1 {
                         //     println!("1 dao {}", dp[nn][kk][dd]);

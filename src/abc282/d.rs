@@ -28,15 +28,17 @@ fn main() {
     }
     // 色
     let mut color = vec![2; n];
-    // グラフ彩色 (木のdfsなのでn回ループしなくても、全頂点を探索可能)
-    let mut flag = true;
+    // グラフ彩色 
+    let mut is_bipartite = true;
     let mut nibu = vec![];
     let mut non_nibu = vec![];
+    // graph全体が連結とは限らないのでforループする必要がある
     for i in 0..n {
         if color[i] != 2 {continue}
         let mut renketu = vec![];
-        flag = dfs(&graph, 0, &mut color, 0, &mut renketu);
-        if flag {
+        is_bipartite = dfs(&graph, i, &mut color, 0, &mut renketu);
+        // println!("i: {}, is_bipartite: {}",i+1, is_bipartite);
+        if is_bipartite {
             nibu.push(renketu);
         }
         else {
@@ -45,34 +47,41 @@ fn main() {
     }
 
     // 同色の頂点を格納する(深さが偶数、奇数の頂点で分ける)
-    let mut g0 = vec![];
-    let mut g1 = vec![];
-    for nibu_i in 0..nibu.len() {
-        nibu[nibu_i]
-    }
-    for v in 0..n {
-        if color[v] == 0 {g0.push(v)}
-        if color[v] == 1 {g1.push(v)}
-    }
-
     let mut ans = 0;
-    for v in 0..n {
-        let mut count = 0;
-        let current_color = color[v];
-        for i in 0..graph[v].len() {
-            if current_color != color[graph[v][i]] {
-                count += 1;
+    for nibu_i in 0..nibu.len() {
+        let mut count_in_connected = 0;
+        let mut g0 = vec![];
+        let mut g1 = vec![];
+        for v_i in 0..nibu[nibu_i].len() {
+            let v = nibu[nibu_i][v_i];
+            if color[v] == 0 {g0.push(v)}
+            if color[v] == 1 {g1.push(v)}
+        }
+        // 同一の連結グラフ内部で条件を満たす辺を数える
+        for v_i in 0..nibu[nibu_i].len() {
+            let v = nibu[nibu_i][v_i];
+            let mut count = 0;
+            let current_color = color[v];
+            for i in 0..graph[v].len() {
+                if current_color != color[graph[v][i]] {
+                    count += 1;
+                }
+            }
+            if current_color == 0 {
+                count_in_connected += (g1.len() - count);
+            }
+            else {
+                count_in_connected += (g0.len() - count);
             }
         }
-        if current_color == 0 {
-            ans += (g1.len() - count);
-        }
-        else {
-            ans += (g0.len() - count);
-        }
+        // 異なる連結グラフ同士で条件を満たす辺を数える (2部グラフの異なる連結成分同士は、どの頂点同士でも必ず2部グラフになる。)
+        // 注目している連結成分のサイズ * 注目していない連結成分の総サイズ
+        count_in_connected += nibu[nibu_i].len() * (n - nibu[nibu_i].len());
+        ans += count_in_connected;
     }
+
     ans /= 2;
-    if !flag {
+    if non_nibu.len() > 0 {
         println!("0");
     }
     else {
@@ -82,7 +91,7 @@ fn main() {
 
 }
 
-// 2部グラフ
+// 2部グラフ判定. 2部グラフならTrueを返し、そうではないならFalseを返す。colorに2色に配色した結果が格納される
 fn dfs(graph: &Vec<Vec<usize>>, v: usize, color: &mut Vec<usize>, current_color: usize, renketu: &mut Vec<usize>) -> bool {
     color[v] = current_color;
     renketu.push(v);
@@ -94,6 +103,5 @@ fn dfs(graph: &Vec<Vec<usize>>, v: usize, color: &mut Vec<usize>, current_color:
         if color[next_v] == 1 - current_color {continue}
         if !dfs(graph, next_v, color, 1 - current_color, renketu) {return false}
     }
-
     return true
 }

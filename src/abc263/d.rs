@@ -15,49 +15,38 @@ fn main() {
         r: isize,
         mut a: [isize; n]
     }
-    let mut left_sum = cummulative_sum(&a);
+    let mut cum = cummulative_sum(&a);
 
-    let mut ans = left_sum[n-1];
-    let mut min_x = n;
-    let mut min_y = n;
-    let mut x = 0;
-    let mut y = n-1;
-    loop {
-        if l <= a[x] {
-            min_x = x;
-            x += 1;
-        }
-        if r <= a[y] {
-            min_y = y;
-            y -= 1;
-        }
+    // 1. 置換なし
+    let mut ans = cum[n-1];
+    // 2. 全てRで置換
+    ans = min(ans, n as isize * r);
+    // 3. 全てLで置換
+    ans = min(ans, n as isize * l);
+    // 4. Lで一回も置換しない
+    for y in 1..n {
+        let sum = cum[y-1] + (n - y) as isize * r;
+        ans = min(ans, sum);
     }
-    
+    // 5. Rで一回も置換しない
+    for x in 1..n {
+        let sum = cum[n-1] - cum[x] + (x + 1) as isize * l;
+        ans = min(ans, sum);
+    }
+    // 6. x < yのとき
+    let INF = std::isize::MAX; // 9_223_372_036_854_775_807 = 9.2... * 10^18
+    // y_term[x] := x<yを満たすyのうち、項 cum[y-1] - r * y が最小になる値
+    let mut y_term = vec![INF; n];
+    let mut sum = INF;
+    for yy in 1..n {
+        let y = n - yy;
+        sum = min(sum, cum[y-1] - r * y as isize);
+        y_term[y-1] = sum;
+    }
+    for x in 0..n-1 {
+        ans = min(ans, y_term[x] -cum[x] + x as isize * l + n as isize * r + l)
+    }
 
-    let mut x = 0;
-    let mut y = n-1;
-
-    // for x in 0..n {
-    //     let sum = left_sum[n-1] - left_sum[x] + (x+1) as isize * l;
-    //     if sum < ans {
-    //         min_x = x;
-    //         ans = sum;
-    //     }
-    // }
-    // if min_x != n {
-    //     for i in 0..min_x+1 {
-    //         a[i] = l;
-    //     }
-    // }
-    // let mut left_sum = cummulative_sum(&a);
-    // let mut min_y = n;
-    // for y in 0..n {
-    //     let sum = left_sum[y] + (n - 1 - y) as isize * r;
-    //     if sum < ans {
-    //         ans = sum;
-    //     }
-    // }
-    // ans = min(ans, n as isize * r);
     println!("{}", ans);
 
 }

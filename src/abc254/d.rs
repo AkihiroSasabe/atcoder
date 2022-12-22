@@ -12,7 +12,7 @@ fn main() {
         n: usize
     }
     
-    // O(N^(1.5))の計算量
+    // O(N^(1.5))の計算量 (bayashikoさんの解説と同じ)
     let mut ans = 0;
     for i in 1..n+1 {
         // i*iの素因数分解の結果が知りたいが、iの素因数分解の結果から各素数の指数を2倍すればいいだけ。
@@ -37,6 +37,9 @@ fn main() {
 
 }
 
+// ii = p0^x0 * p1^x1 * p2^x2 ... を2つの数の積value1 * value2で表現し、
+// value1 <= N && value2 <= N となるペアの組み合わせの数を再帰関数で数える。
+// value1 = p0^y0 * p1^y1 * p2^y2 ... で yi <= xiである
 fn dfs(p_list: &Vec<Vec<usize>>, depth: usize, ans: &mut usize, value: usize, n: usize, ii: usize) {
     if depth == p_list.len() {
         if ii / value < n + 1 && value < n + 1 {

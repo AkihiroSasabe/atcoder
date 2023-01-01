@@ -1293,3 +1293,35 @@ path = "src/abc251/g.rs"
 [[bin]]
 name = "abc251_h"
 path = "src/abc251/h.rs"
+
+[[bin]]
+name = "abc243_a"
+path = "src/abc243/a.rs"
+
+[[bin]]
+name = "abc243_b"
+path = "src/abc243/b.rs"
+
+[[bin]]
+name = "abc243_c"
+path = "src/abc243/c.rs"
+
+[[bin]]
+name = "abc243_d"
+path = "src/abc243/d.rs"
+
+[[bin]]
+name = "abc243_e"
+path = "src/abc243/e.rs"
+
+[[bin]]
+name = "abc243_f"
+path = "src/abc243/f.rs"
+
+[[bin]]
+name = "abc243_g"
+path = "src/abc243/g.rs"
+
+[[bin]]
+name = "abc243_h"
+path = "src/abc243/h.rs"

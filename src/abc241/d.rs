@@ -14,84 +14,77 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
-    // 23-01-02
-    // 17:00-17:24 => 24min
+    // 2023-01-03 10:44-11:40 (56min)
     input! {
-        n: usize,
-        s: [Chars; n]
+        q: usize,
     }
-    let mut flag = false;
-    for y in 0..n {
-        for x in 0..n {
-            if horizontal_check(&s, y, x) || vertical_check(&s, y, x) || down_cross_check(&s, y, x) || upper_cross_check(&s, y, x) {
-                flag = true;
+
+    let mut command = vec![];
+    let mut x = vec![];
+    let mut k = vec![];
+    for i in 0..q {
+        input! {
+            command_i: usize,
+            x_i: usize,
+        }
+        if command_i != 1 {
+            input! {
+                k_i: usize
+            }
+            k.push(k_i);
+        }
+        else {
+            k.push(0);
+        }
+        command.push(command_i);
+        x.push(x_i);
+    }
+    let mut btree = BTreeMap::new();
+    for i in 0..q {
+        // println!("btree: {:?}", btree);
+        if command[i] == 1 {
+            if !btree.contains_key(&x[i]) {
+                btree.insert(x[i],1_usize);                
+            }
+            else {
+                *btree.get_mut(&x[i]).unwrap() += 1;
+            }
+        }
+        else if command[i] == 2 {
+            let mut count = k[i];
+            let mut exist = false;
+            for (&key, &value) in btree.range(..x[i]+1).rev() {
+                // println!("key, value:{}, {}", key, value);
+                if count > value {
+                    count -= value;
+                }
+                else {
+                    println!("{}", key);
+                    exist = true;
+                    break
+                }
+            }
+            if !exist {
+                println!("-1");
+            }
+        }
+        else if command[i] == 3 {
+            let mut count = k[i];
+            let mut exist = false;
+            for (&key, &value) in btree.range(x[i]..) {
+                // println!("key, value:{}, {}", key, value);
+                if count > value {
+                    count -= value;
+                }
+                else {
+                    println!("{}", key);
+                    exist = true;
+                    break
+                }
+            }
+            if !exist {
+                println!("-1");
             }
         }
     }
-    if flag {
-        println!("Yes");
-    }
-    else {
-        println!("No");
-    }
-}
-
-fn upper_cross_check(s: &Vec<Vec<char>>, y: usize, x: usize) -> bool {
-    let mut count = 0;
-    for i in 0..6 {
-        if y < i {
-            return false
-        }
-        if does_index_exceed(s, y-i, x+i) {
-            return false
-        }
-        if s[y-i][x+i] == '#' {
-            count += 1;
-        }
-    }
-    return count >= 4
-}
-
-fn down_cross_check(s: &Vec<Vec<char>>, y: usize, x: usize) -> bool {
-    let mut count = 0;
-    for i in 0..6 {
-        if does_index_exceed(s, y+i, x+i) {
-            return false
-        }
-        if s[y+i][x+i] == '#' {
-            count += 1;
-        }
-    }
-    return count >= 4
-}
-
-fn horizontal_check(s: &Vec<Vec<char>>, y: usize, x: usize) -> bool {
-    let mut count = 0;
-    for i in x..x+6 {
-        if does_index_exceed(s, y, i) {
-            return false
-        }
-        if s[y][i] == '#' {
-            count += 1;
-        }
-    }
-    return count >= 4
-}
-
-fn vertical_check(s: &Vec<Vec<char>>, y: usize, x: usize) -> bool {
-    let mut count = 0;
-    for i in y..y+6 {
-        if does_index_exceed(s, i, x) {
-            return false
-        }
-        if s[i][x] == '#' {
-            count += 1;
-        }
-    }
-    return count >= 4
-}
-
-fn does_index_exceed(s: &Vec<Vec<char>>, y: usize, x: usize) -> bool {
-    let n = s.len();
-    return n <= x || n <= y
 }

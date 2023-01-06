@@ -1549,3 +1549,67 @@ path = "src/abc228/g.rs"
 [[bin]]
 name = "abc228_h"
 path = "src/abc228/h.rs"
+
+[[bin]]
+name = "abc227_a"
+path = "src/abc227/a.rs"
+
+[[bin]]
+name = "abc227_b"
+path = "src/abc227/b.rs"
+
+[[bin]]
+name = "abc227_c"
+path = "src/abc227/c.rs"
+
+[[bin]]
+name = "abc227_d"
+path = "src/abc227/d.rs"
+
+[[bin]]
+name = "abc227_e"
+path = "src/abc227/e.rs"
+
+[[bin]]
+name = "abc227_f"
+path = "src/abc227/f.rs"
+
+[[bin]]
+name = "abc227_g"
+path = "src/abc227/g.rs"
+
+[[bin]]
+name = "abc227_h"
+path = "src/abc227/h.rs"
+
+[[bin]]
+name = "abc224_a"
+path = "src/abc224/a.rs"
+
+[[bin]]
+name = "abc224_b"
+path = "src/abc224/b.rs"
+
+[[bin]]
+name = "abc224_c"
+path = "src/abc224/c.rs"
+
+[[bin]]
+name = "abc224_d"
+path = "src/abc224/d.rs"
+
+[[bin]]
+name = "abc224_e"
+path = "src/abc224/e.rs"
+
+[[bin]]
+name = "abc224_f"
+path = "src/abc224/f.rs"
+
+[[bin]]
+name = "abc224_g"
+path = "src/abc224/g.rs"
+
+[[bin]]
+name = "abc224_h"
+path = "src/abc224/h.rs"

@@ -14,6 +14,7 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2023-01-22 15:13-16:49 (1h36m)
     input! {
         n: usize,
         a: [usize; n],
@@ -39,45 +40,64 @@ fn main() {
             }
         }
     }
+    let dp = floyd_warshall(&graph, &a);
+    let INF = 1 << 60;
+    for i in 0..q {
+        let flight_num = dp[u[i]][v[i]][0];
+        let souvenir_value = dp[u[i]][v[i]][1];
+        if flight_num == INF {
+            println!("Impossible");
+        }
+        else {
+            println!("{} {}", flight_num, souvenir_value);
+        }
+    }
 
 }
 
-fn dfs(v: usize, graph: &mut Vec<Vec<usize>>, dist: usize, seen: &mut Vec<bool>) {
+// fn dfs(v: usize, graph: &mut Vec<Vec<usize>>, dist: usize, seen: &mut Vec<bool>) {
 
-}
-
-// // フロイド・ワーシャル法で、全頂点対間の距離をO(V^3)で最小化 (全点対間最短経路問題)
-// fn floyd_warshall(graph: &Vec<Vec<Vec<usize>>>) -> Vec<Vec<usize>> {
-//     // 頂点数
-//     let n = graph.len();
-//     // dp[i][j]で頂点iから頂点jに行くときの最短距離
-//     let INF = std::usize::MAX;
-//     let mut dp = vec![vec![vec![INF, 0]; n]; n];
-
-//     // dpの初期化
-//     for i in 0..n {
-//         dp[i][i] = 0;
-//         for j in 0..graph[i].len() {
-//             dp[i][graph[i][j][0]] = graph[i][j][1];
-//         }
-//     }
-    
-//     for k in 0..n {
-//         for i in 0..n {
-//             for j in 0..n {
-//                 // k未満の頂点(0-k-1)のみを、中継点として通って良い。
-//                 if dp[i][j][0] > dp[i][k][0] + dp[k][j][0] {
-//                     dp[i][j][0] = dp[i][k][0] + dp[k][j][0];
-//                 }
-//                 dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);
-//                 // 例 k = 1の時
-//                 // dp[0][0] = min(dp[0][0], dp[0][1] + dp[1][0]);
-//                 // dp[0][1] = min(dp[0][1], dp[0][1] + dp[1][1]);
-//                 // dp[0][2] = min(dp[0][2], dp[0][1] + dp[1][2]);
-//                 // dp[0][3] = min(dp[0][3], dp[0][1] + dp[1][3]);
-//                 // dp[0][4] = min(dp[0][4], dp[0][1] + dp[1][4]);
-//             }
-//         }
-//     }
-//     return dp
 // }
+
+/// フロイド・ワーシャル法で、全頂点対間の距離をO(V^3)で最小化 (全点対間最短経路問題)
+/// * `graph` - [隣接頂点].
+fn floyd_warshall(graph: &Vec<Vec<usize>>, souvenir: &Vec<usize>) -> Vec<Vec<Vec<usize>>> {
+    // 頂点数
+    let n = graph.len();
+    // dp[i][j]で頂点iから頂点jに行くときの[最短距離, お土産の価値の総和]
+    let INF = 1 << 60;
+    let mut dp = vec![vec![vec![INF, 0]; n]; n];
+
+    // dpの初期化
+    for i in 0..n {
+        dp[i][i][0] = 0;
+        dp[i][i][1] = souvenir[i];
+        for j in 0..graph[i].len() {
+            let next_v = graph[i][j];
+            dp[i][next_v][0] = 1;
+            dp[i][next_v][1] = souvenir[i] + souvenir[next_v];
+        }
+    }
+    
+    for k in 0..n {
+        for i in 0..n {
+            for j in 0..n {
+                // k未満の頂点(0-k-1)のみを、中継点として通って良い。
+                if dp[i][j][0] > dp[i][k][0] + dp[k][j][0] {
+                    dp[i][j][0] = dp[i][k][0] + dp[k][j][0];
+                    dp[i][j][1] = dp[i][k][1] + dp[k][j][1] - souvenir[k];
+                }
+                else if dp[i][j][0] == dp[i][k][0] + dp[k][j][0] {
+                    dp[i][j][1] = max(dp[i][j][1], dp[i][k][1] + dp[k][j][1] - souvenir[k]);
+                }
+                // 例 k = 1の時
+                // dp[0][0] = min(dp[0][0], dp[0][1] + dp[1][0]);
+                // dp[0][1] = min(dp[0][1], dp[0][1] + dp[1][1]);
+                // dp[0][2] = min(dp[0][2], dp[0][1] + dp[1][2]);
+                // dp[0][3] = min(dp[0][3], dp[0][1] + dp[1][3]);
+                // dp[0][4] = min(dp[0][4], dp[0][1] + dp[1][4]);
+            }
+        }
+    }
+    return dp
+}

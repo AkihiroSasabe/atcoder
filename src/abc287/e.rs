@@ -14,36 +14,60 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2023-01-29 17:10-
     input! {
         n: usize,
         mut s: [String; n]
     }
 
-    // let aaa = s[0].chars().nth(0).unwrap();
-    // println!("{:?}", aaa);
-
     let mut ss = vec![];
     for i in 0..n {
-        println!("{}", i);
         let i_string: String = i.to_string();
         ss.push(vec![s[i].clone(), i_string]);
-        // println!("{:?}", s[i]);
     }
     ss.sort();
-    let mut post = 0;
-    for j in 0..min(ss[0][0].len(), ss[1][0].len()) {
-        let c0 = s[0][0].chars().nth(0).unwrap();
-        let c1 = s[1][0].chars().nth(0).unwrap();
-
-        if c0 != c1 {
-            post = j;
-            break
-        }
+    for i in 0..n {
+        println!("ss[{}]: {:?}", i, ss[i]);
     }
-    for i in 0..n-1 {
-        for j in 0..ss[i][0].len() {
-            
+
+    let mut counts = vec![0; n];
+    let mut pre=0;
+    let mut post=0;
+    for i in 0..n {
+        // if i == 1 {
+        //     pre = min(ss[i-1][0].len(), ss[i][0].len());
+        //     for j in 0..min(ss[i-1][0].len(), ss[i][0].len()) {
+        //         let c0 = ss[i-1][0].chars().nth(j).unwrap();
+        //         let c1 = ss[i][0].chars().nth(j).unwrap();
+        //         // println!("pre: i: {}, c0:{} c1:{}",i, c0, c1);
+        //         if c0 != c1 {
+        //             pre = min(pre, j);
+        //             break
+        //         }
+        //     }
+        // }
+
+        if i+1 < n {
+            post = min(ss[i+1][0].len(), ss[i][0].len());
+            for j in 0..min(ss[i+1][0].len(), ss[i][0].len()) {
+                let c0 = ss[i+1][0].chars().nth(j).unwrap();
+                let c1 = ss[i][0].chars().nth(j).unwrap();
+                // println!("post: i: {}, c0:{} c1:{}",i, c0, c1);
+                if c0 != c1 {
+                    post = min(post, j);
+                    break
+                }
+            }
         }
-        println!("{:?}", ss[i]);
+        else {
+            post = 0;
+        }
+        let c: usize = ss[i][1].parse().unwrap();
+        // println!("i:{}, pre:{} post:{}, c:{}", i, pre, post, c);
+        counts[c] = max(pre, post);
+        pre = post;
+    }
+    for i in 0..n {
+        println!("{}", counts[i]);
     }
 }

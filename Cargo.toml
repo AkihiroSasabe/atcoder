@@ -1933,3 +1933,35 @@ path = "src/abc217/g.rs"
 [[bin]]
 name = "abc217_h"
 path = "src/abc217/h.rs"
+
+[[bin]]
+name = "abc216_a"
+path = "src/abc216/a.rs"
+
+[[bin]]
+name = "abc216_b"
+path = "src/abc216/b.rs"
+
+[[bin]]
+name = "abc216_c"
+path = "src/abc216/c.rs"
+
+[[bin]]
+name = "abc216_d"
+path = "src/abc216/d.rs"
+
+[[bin]]
+name = "abc216_e"
+path = "src/abc216/e.rs"
+
+[[bin]]
+name = "abc216_f"
+path = "src/abc216/f.rs"
+
+[[bin]]
+name = "abc216_g"
+path = "src/abc216/g.rs"
+
+[[bin]]
+name = "abc216_h"
+path = "src/abc216/h.rs"

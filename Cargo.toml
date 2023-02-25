@@ -1997,3 +1997,163 @@ path = "src/abc287/g.rs"
 [[bin]]
 name = "abc287_h"
 path = "src/abc287/h.rs"
+
+[[bin]]
+name = "abc288_a"
+path = "src/abc288/a.rs"
+
+[[bin]]
+name = "abc288_b"
+path = "src/abc288/b.rs"
+
+[[bin]]
+name = "abc288_c"
+path = "src/abc288/c.rs"
+
+[[bin]]
+name = "abc288_d"
+path = "src/abc288/d.rs"
+
+[[bin]]
+name = "abc288_e"
+path = "src/abc288/e.rs"
+
+[[bin]]
+name = "abc288_f"
+path = "src/abc288/f.rs"
+
+[[bin]]
+name = "abc288_g"
+path = "src/abc288/g.rs"
+
+[[bin]]
+name = "abc288_h"
+path = "src/abc288/h.rs"
+
+[[bin]]
+name = "abc289_a"
+path = "src/abc289/a.rs"
+
+[[bin]]
+name = "abc289_b"
+path = "src/abc289/b.rs"
+
+[[bin]]
+name = "abc289_c"
+path = "src/abc289/c.rs"
+
+[[bin]]
+name = "abc289_d"
+path = "src/abc289/d.rs"
+
+[[bin]]
+name = "abc289_e"
+path = "src/abc289/e.rs"
+
+[[bin]]
+name = "abc289_f"
+path = "src/abc289/f.rs"
+
+[[bin]]
+name = "abc289_g"
+path = "src/abc289/g.rs"
+
+[[bin]]
+name = "abc289_h"
+path = "src/abc289/h.rs"
+
+[[bin]]
+name = "abc290_a"
+path = "src/abc290/a.rs"
+
+[[bin]]
+name = "abc290_b"
+path = "src/abc290/b.rs"
+
+[[bin]]
+name = "abc290_c"
+path = "src/abc290/c.rs"
+
+[[bin]]
+name = "abc290_d"
+path = "src/abc290/d.rs"
+
+[[bin]]
+name = "abc290_e"
+path = "src/abc290/e.rs"
+
+[[bin]]
+name = "abc290_f"
+path = "src/abc290/f.rs"
+
+[[bin]]
+name = "abc290_g"
+path = "src/abc290/g.rs"
+
+[[bin]]
+name = "abc290_h"
+path = "src/abc290/h.rs"
+
+[[bin]]
+name = "abc291_a"
+path = "src/abc291/a.rs"
+
+[[bin]]
+name = "abc291_b"
+path = "src/abc291/b.rs"
+
+[[bin]]
+name = "abc291_c"
+path = "src/abc291/c.rs"
+
+[[bin]]
+name = "abc291_d"
+path = "src/abc291/d.rs"
+
+[[bin]]
+name = "abc291_e"
+path = "src/abc291/e.rs"
+
+[[bin]]
+name = "abc291_f"
+path = "src/abc291/f.rs"
+
+[[bin]]
+name = "abc291_g"
+path = "src/abc291/g.rs"
+
+[[bin]]
+name = "abc291_h"
+path = "src/abc291/h.rs"
+
+[[bin]]
+name = "abc292_a"
+path = "src/abc292/a.rs"
+
+[[bin]]
+name = "abc292_b"
+path = "src/abc292/b.rs"
+
+[[bin]]
+name = "abc292_c"
+path = "src/abc292/c.rs"
+
+[[bin]]
+name = "abc292_d"
+path = "src/abc292/d.rs"
+
+[[bin]]
+name = "abc292_e"
+path = "src/abc292/e.rs"
+
+[[bin]]
+name = "abc292_f"
+path = "src/abc292/f.rs"
+
+[[bin]]
+name = "abc292_g"
+path = "src/abc292/g.rs"
+
+[[bin]]
+name = "abc292_h"
+path = "src/abc292/h.rs"

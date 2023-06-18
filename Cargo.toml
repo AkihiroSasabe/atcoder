@@ -2509,3 +2509,99 @@ path = "src/abc303/g.rs"
 [[bin]]
 name = "abc303_h"
 path = "src/abc303/h.rs"
+
+[[bin]]
+name = "abc304_a"
+path = "src/abc304/a.rs"
+
+[[bin]]
+name = "abc304_b"
+path = "src/abc304/b.rs"
+
+[[bin]]
+name = "abc304_c"
+path = "src/abc304/c.rs"
+
+[[bin]]
+name = "abc304_d"
+path = "src/abc304/d.rs"
+
+[[bin]]
+name = "abc304_e"
+path = "src/abc304/e.rs"
+
+[[bin]]
+name = "abc304_f"
+path = "src/abc304/f.rs"
+
+[[bin]]
+name = "abc304_g"
+path = "src/abc304/g.rs"
+
+[[bin]]
+name = "abc304_h"
+path = "src/abc304/h.rs"
+
+[[bin]]
+name = "abc305_a"
+path = "src/abc305/a.rs"
+
+[[bin]]
+name = "abc305_b"
+path = "src/abc305/b.rs"
+
+[[bin]]
+name = "abc305_c"
+path = "src/abc305/c.rs"
+
+[[bin]]
+name = "abc305_d"
+path = "src/abc305/d.rs"
+
+[[bin]]
+name = "abc305_e"
+path = "src/abc305/e.rs"
+
+[[bin]]
+name = "abc305_f"
+path = "src/abc305/f.rs"
+
+[[bin]]
+name = "abc305_g"
+path = "src/abc305/g.rs"
+
+[[bin]]
+name = "abc305_h"
+path = "src/abc305/h.rs"
+
+[[bin]]
+name = "abc306_a"
+path = "src/abc306/a.rs"
+
+[[bin]]
+name = "abc306_b"
+path = "src/abc306/b.rs"
+
+[[bin]]
+name = "abc306_c"
+path = "src/abc306/c.rs"
+
+[[bin]]
+name = "abc306_d"
+path = "src/abc306/d.rs"
+
+[[bin]]
+name = "abc306_e"
+path = "src/abc306/e.rs"
+
+[[bin]]
+name = "abc306_f"
+path = "src/abc306/f.rs"
+
+[[bin]]
+name = "abc306_g"
+path = "src/abc306/g.rs"
+
+[[bin]]
+name = "abc306_h"
+path = "src/abc306/h.rs"

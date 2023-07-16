@@ -21,6 +21,8 @@ fn main() {
         ab: [(usize, usize); m]
     }
 
+    // 解法は競プロフレンズ氏と同じ: https://twitter.com/kyopro_friends/status/1680213735192031232
+
     // 相性の悪い人間関係をグラフにする
     let mut graph: Vec<HashSet<usize>> = vec![HashSet::new(); n];
     for i in 0..m {

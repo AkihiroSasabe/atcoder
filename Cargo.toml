@@ -2925,3 +2925,67 @@ path = "src/abc318/g.rs"
 [[bin]]
 name = "abc318_h"
 path = "src/abc318/h.rs"
+
+[[bin]]
+name = "abc319_a"
+path = "src/abc319/a.rs"
+
+[[bin]]
+name = "abc319_b"
+path = "src/abc319/b.rs"
+
+[[bin]]
+name = "abc319_c"
+path = "src/abc319/c.rs"
+
+[[bin]]
+name = "abc319_d"
+path = "src/abc319/d.rs"
+
+[[bin]]
+name = "abc319_e"
+path = "src/abc319/e.rs"
+
+[[bin]]
+name = "abc319_f"
+path = "src/abc319/f.rs"
+
+[[bin]]
+name = "abc319_g"
+path = "src/abc319/g.rs"
+
+[[bin]]
+name = "abc319_h"
+path = "src/abc319/h.rs"
+
+[[bin]]
+name = "abc320_a"
+path = "src/abc320/a.rs"
+
+[[bin]]
+name = "abc320_b"
+path = "src/abc320/b.rs"
+
+[[bin]]
+name = "abc320_c"
+path = "src/abc320/c.rs"
+
+[[bin]]
+name = "abc320_d"
+path = "src/abc320/d.rs"
+
+[[bin]]
+name = "abc320_e"
+path = "src/abc320/e.rs"
+
+[[bin]]
+name = "abc320_f"
+path = "src/abc320/f.rs"
+
+[[bin]]
+name = "abc320_g"
+path = "src/abc320/g.rs"
+
+[[bin]]
+name = "abc320_h"
+path = "src/abc320/h.rs"

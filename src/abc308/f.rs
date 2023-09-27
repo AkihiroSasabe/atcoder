@@ -25,9 +25,7 @@ fn main() {
         mut d: [isize; m],
     }
 
-    // 値引き額が大きいものから、貪欲に使っていけばいいのでは?
-    p.sort();
-
+    // 値引き額が大きいものから、貪欲に使っていけばいい
     let mut d_minusl = vec![];
     for i in 0..m {
         d_minusl.push(vec![d[i], -l[i]]);
@@ -36,29 +34,26 @@ fn main() {
     d_minusl.reverse();
 
     // dlは値引き率が大きくて、かつ使用できるコストが低い順に並んでいる。
-    let mut dl = vec![];
     let mut d_sorted = vec![];
     let mut l_sorted = vec![];
     for i in 0..m {
-        dl.push(vec![d_minusl[i][0], -d_minusl[i][1]]);
         d_sorted.push(d_minusl[i][0]);
         l_sorted.push(-d_minusl[i][1]);
     }
 
     let mut ans = 0;
-    // btree<値段, 個数>
+    // btree<値段x, x円の商品の個数>
     let mut btree = BTreeMap::new();
     for i in 0..n {
         ans += p[i];
         *btree.entry(p[i]).or_insert(0_usize) += 1;
     }
-    // let mut used = vec![false; n];
     for i in 0..m {
-        let off_price = d_sorted[i];
+        let discount = d_sorted[i];
         let condition = l_sorted[i];
-        // condition以上で最小の値段の商品を探す
+        // condition円以上で最小の値段の商品を探す
         if let Some((&key, _)) = btree.range(condition..).next() {
-            ans -= off_price;
+            ans -= discount;
             reduce_from_btree(&mut btree, key);
         }
     }

@@ -1,6 +1,7 @@
 #![allow(dead_code, unused_imports)]
 use proconio::input;
 use itertools::Itertools;
+use core::num;
 use std::cmp::{max, min};
 use std::cmp::Ordering;
 use std::collections::VecDeque;
@@ -15,6 +16,10 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2023-10-12 21:38-22:20 (42min)
+    // 2023-10-13 12:07-12:45 (38min)
+    // 2023-10-13 20:30-21:00 (30min)
+    // 110min = 1h50min
     input! {
         t: usize,
     }
@@ -34,43 +39,73 @@ fn main() {
 
     for i in 0..t {
         let ni = n[i];
-        let mut di = d[i];
-        if di > ni {
-            di = di % ni;
-        }
-        if di == 0 {
-            di = 1;
-        }
-        let mut ki = k[i]-1;
+        let di = d[i];
+        let ki = k[i];
 
-        let mut ans = 0;
-        let mut start = 0;
-        // let mut hash = BTreeMap::new();
-        let mut hash = HashMap::new();
-        hash.insert(start, 0);
-        loop {
-            // ni-1を超えるまでに足す回数
-            let num = (ni-1-start) / di;
-            println!("ki: {}, start: {}, num: {}", ki, start, num);
-            if ki <= num {
-                ans = start + di * ki;
-                break
-            }
-            else {
-                start = (start + (num+1) * di) % ni;
-                while hash.contains_key(&start) {
-                    println!("start exist: {}", start);
-                    // start = (start + 1) % ni; 
-                    start = (start + 1) % ni;
-                }
-                hash.insert(start, 0);
-                ki -= num + 1;
-            }
-        }
+        let diff_angle = di % ni;
+        let gcd: usize = gcd(ni, diff_angle);
+        let cycle_time = ni / gcd;
+
+        let amari = (ki - 1) % cycle_time;
+        let num_loop = (ki - 1) / cycle_time;
+        
+        let ans = (num_loop + amari * diff_angle) % ni;
+        // println!("i={i}, ni={ni}, di={di}, ki={ki}-----------");
+        // println!("diff_angle={diff_angle}, cycle_time = {cycle_time}, amari = {amari}, num_loop = {num_loop}");
         println!("{}", ans);
+
     }
 
+    // TLE解
+    // for i in 0..t {
+    //     let ni = n[i];
+    //     let di = d[i];
+    //     let ki = k[i];
+
+    //     if di == 1 {
+    //         println!("{}", ki - 1);
+    //         continue;
+    //     }
+
+    //     // 合計di回のループで終わる。
+    //     // 1回のループで何回カウントするか?
+    //     // z回目の始点はどこか?
+
+    //     let mut hash = HashSet::new();
+    //     let mut x = 0;
+    //     let mut count = 1;
+    //     loop {
+    //         while hash.contains(&x) {
+    //             x += 1;
+    //         }
+    //         hash.insert(x);
+    //         // 一番右
+    //         let diff_count = (ni - 1 - x) / di;
+    //         x = x + diff_count * di;
+    //         count = count + diff_count;
+    //         // println!("i ={}, x = {}, count = {}", i, x, count);
+    //         if count >= ki {
+    //             x -= (count - ki) * di;
+    //             println!("{}", x);
+    //             break
+    //         }
+    //         else {
+    //             x = (x + di) % ni;
+    //             count += 1;
+    //         }
+    //     }
+    // }
+}
 
 
-
+// ユークリッドの互除法で最大公約数を求める (Euclidean Algorithm)
+// ユークリッドの互除法とは、x < y のとき、gcd(x, y)=gcd(x, y % x)
+fn gcd(x: usize, y:usize) -> usize {
+    if y == 0 {
+        // 任意の整数xは0の約数と言える(∵0 % x == 0)ので、0とxの最大公約数はx
+        return x;
+    }
+    else {
+        return gcd(y, x % y);
+    }
 }

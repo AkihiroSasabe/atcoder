@@ -31,7 +31,6 @@ fn main() {
         s.push(s_i);
     }
 
-
     let s_over = 200_001;
     let mut graph = vec![vec![]; s_over + n];
     for i in 0..n {

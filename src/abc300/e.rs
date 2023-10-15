@@ -114,7 +114,7 @@ fn dfs_divisors(prime_index: usize, divisor: usize, divisors: &mut Vec<usize>, p
     }
 }
 
-// 素因数分解
+/// 素因数分解。出力: Vec<<素数, 指数>>
 fn prime_factorize(mut x: usize) -> Vec<Vec<usize>> {
     // let root_x = (x as f64).sqrt() as usize;
     let mut prime_num_list = vec![];

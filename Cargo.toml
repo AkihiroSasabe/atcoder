@@ -3149,3 +3149,35 @@ path = "src/abc324/g.rs"
 [[bin]]
 name = "abc324_h"
 path = "src/abc324/h.rs"
+
+[[bin]]
+name = "abc325_a"
+path = "src/abc325/a.rs"
+
+[[bin]]
+name = "abc325_b"
+path = "src/abc325/b.rs"
+
+[[bin]]
+name = "abc325_c"
+path = "src/abc325/c.rs"
+
+[[bin]]
+name = "abc325_d"
+path = "src/abc325/d.rs"
+
+[[bin]]
+name = "abc325_e"
+path = "src/abc325/e.rs"
+
+[[bin]]
+name = "abc325_f"
+path = "src/abc325/f.rs"
+
+[[bin]]
+name = "abc325_g"
+path = "src/abc325/g.rs"
+
+[[bin]]
+name = "abc325_h"
+path = "src/abc325/h.rs"

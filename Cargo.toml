@@ -3213,3 +3213,67 @@ path = "src/abc326/g.rs"
 [[bin]]
 name = "abc326_h"
 path = "src/abc326/h.rs"
+
+[[bin]]
+name = "abc327_a"
+path = "src/abc327/a.rs"
+
+[[bin]]
+name = "abc327_b"
+path = "src/abc327/b.rs"
+
+[[bin]]
+name = "abc327_c"
+path = "src/abc327/c.rs"
+
+[[bin]]
+name = "abc327_d"
+path = "src/abc327/d.rs"
+
+[[bin]]
+name = "abc327_e"
+path = "src/abc327/e.rs"
+
+[[bin]]
+name = "abc327_f"
+path = "src/abc327/f.rs"
+
+[[bin]]
+name = "abc327_g"
+path = "src/abc327/g.rs"
+
+[[bin]]
+name = "abc327_h"
+path = "src/abc327/h.rs"
+
+[[bin]]
+name = "abc328_a"
+path = "src/abc328/a.rs"
+
+[[bin]]
+name = "abc328_b"
+path = "src/abc328/b.rs"
+
+[[bin]]
+name = "abc328_c"
+path = "src/abc328/c.rs"
+
+[[bin]]
+name = "abc328_d"
+path = "src/abc328/d.rs"
+
+[[bin]]
+name = "abc328_e"
+path = "src/abc328/e.rs"
+
+[[bin]]
+name = "abc328_f"
+path = "src/abc328/f.rs"
+
+[[bin]]
+name = "abc328_g"
+path = "src/abc328/g.rs"
+
+[[bin]]
+name = "abc328_h"
+path = "src/abc328/h.rs"

@@ -3821,3 +3821,35 @@ path = "src/abc226/g.rs"
 [[bin]]
 name = "abc226_h"
 path = "src/abc226/h.rs"
+
+[[bin]]
+name = "abc336_a"
+path = "src/abc336/a.rs"
+
+[[bin]]
+name = "abc336_b"
+path = "src/abc336/b.rs"
+
+[[bin]]
+name = "abc336_c"
+path = "src/abc336/c.rs"
+
+[[bin]]
+name = "abc336_d"
+path = "src/abc336/d.rs"
+
+[[bin]]
+name = "abc336_e"
+path = "src/abc336/e.rs"
+
+[[bin]]
+name = "abc336_f"
+path = "src/abc336/f.rs"
+
+[[bin]]
+name = "abc336_g"
+path = "src/abc336/g.rs"
+
+[[bin]]
+name = "abc336_h"
+path = "src/abc336/h.rs"

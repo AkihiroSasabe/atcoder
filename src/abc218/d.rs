@@ -8,178 +8,119 @@ use std::collections::BinaryHeap;
 use std::collections::HashMap;
 use std::collections::BTreeMap;
 use std::ops::Bound::{Excluded, Included, Unbounded};
-use std::collections::HashSet;
+use std::collections::{HashSet, BTreeSet};
 use proconio::marker::Chars;
 use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
-    // 2023-01-23 12:07-12:34 (27m)
-    // 2023-01-23 21:10-22:19 (1h10m)
-    // 2023-01-24 12:00-12:26 (26m)
-    // 2h3m
+    // 2024-01-31 21:04-21:57 (53min)
     input! {
-        n: usize,
-        s: [Chars; n],
-        t_0: [Chars; n],
+        n: usize
     }
-    let mut t_1 = rotate(&t_0);
-    let mut t_2 = rotate(&t_1);
-    let mut t_3 = rotate(&t_2);
-
-    let hash_s = get_cut_length(&s);
-    let hash_t0 = get_cut_length(&t_0);
-    let hash_t1 = get_cut_length(&t_1);
-    let hash_t2 = get_cut_length(&t_2);
-    let hash_t3 = get_cut_length(&t_3);
-
-    // println!("{:?}", hash_s);
-    // println!("{:?}", hash_t0);
-    // println!("{:?}", hash_t1);
-    // println!("{:?}", hash_t2);
-    // println!("{:?}", hash_t3);
-
-    // print_grid(&s);
-    // print_grid(&t_0);
-    // print_grid(&t_1);
-    // print_grid(&t_2);
-    // print_grid(&t_3);
-
-    if judge(&s, &t_0, &hash_s, &hash_t0) || judge(&s, &t_1, &hash_s, &hash_t1) || judge(&s, &t_2, &hash_s, &hash_t2) || judge(&s, &t_3, &hash_s, &hash_t3){
-        println!("Yes");
-    }
-    else {
-        println!("No");
-    }
-    
-}
-
-fn print_grid(grid: &Vec<Vec<char>>) {
-    println!("");
-    let n = grid.len();
+    let mut x = vec![];
+    let mut y = vec![];
     for i in 0..n {
-        for j in 0..n {
-            print!("{}", grid[i][j]);
+        input! {
+            xi: usize,
+            yi: usize,
         }
-        println!("");
+        x.push(xi);
+        y.push(yi);
     }
-}
+    let (ranked_x, _, _) = rank_array(&x);
+    let (ranked_y, _, _) = rank_array(&y);
 
-fn judge(grid: &Vec<Vec<char>>, grid2: &Vec<Vec<char>>, hash: &HashMap<char, usize>, hash2: &HashMap<char, usize>) -> bool {
-    let n = grid.len();
-
-    let d = *hash.get(&'d').unwrap();
-    let u = *hash.get(&'u').unwrap();
-    let r = *hash.get(&'r').unwrap();
-    let l = *hash.get(&'l').unwrap();
-
-    let d2= *hash2.get(&'d').unwrap();
-    let u2= *hash2.get(&'u').unwrap();
-    let r2= *hash2.get(&'r').unwrap();
-    let l2= *hash2.get(&'l').unwrap();
-
-    if !(d+u == d2+u2 && r+l == r2+l2) {
-        // println!("Not match cut length");
-        return false
+    let mut exist = vec![vec![n; n]; n];
+    let mut rank_yx = vec![];
+    for i in 0..n {
+        let yi = ranked_y[i];
+        let xi = ranked_x[i];
+        exist[yi][xi] = i;
+        rank_yx.push(vec![yi, xi]);
     }
-    for i in 0..n-(d+u) {
-        for j in 0..n-(l+r) {
-            let y = i + d;
-            let x = j + r;
+    // println!("rank_yx = {:?}", rank_yx);
+
+
+    // 若いほど、左上にいる。
+    let mut set = HashSet::new();
+    for i in 0..n {
+        for j in i+1..n {
+            let yi = rank_yx[i][0];
+            let xi = rank_yx[i][1];
+
+            let yj = rank_yx[j][0];
+            let xj = rank_yx[j][1];
+
+            if !(xi !=xj && yi != yj) {continue}
+
+            let v = exist[yj][xi];
+            let w = exist[yi][xj];
             
-            let y2= i + d2;
-            let x2 = j + r2;
-
-            if grid[y][x] != grid2[y2][x2] {
-                // println!("Not match pixel value");
-                return false
+            if v != n && w != n {
+                let mut aaa = vec![i, j, v, w];
+                aaa.sort();
+                set.insert(aaa);
             }
         }
     }
+    // println!("set = {:?}", set);
+    println!("{}", set.len());
 
-    return true
 
 }
 
-// 上下左右の空白辺を何マス分切り取れるか?
-fn get_cut_length(grid: &Vec<Vec<char>>) -> HashMap<char, usize> {
-    let n = grid.len();
-    let mut down = 0;
-    let mut up = 0;
-    let mut left = 0;
-    let mut right = 0;
+fn rank_array<T: Ord + std::hash::Hash + Clone + Copy>(array: &Vec<T>) -> (Vec<usize>, Vec<T>, HashMap<T, usize>) {
+    // 配列を順位変換する関数 O(NlogN)
+    // 要素の値を圧縮することを、目的として使うことを想定している。
+    // Input: 
+    //     array: 配列
+    // Output: 
+    //    ranked_array:     順位変換済み配列
+    //    sorted_array:     ソート済みの配列(順位から元の値をマップさせる)
+    //    original_to_rank: 元の値から順位を対応させるマップ
+    // Example:
+    // let array = vec![333, 111, 444, 111, 555, 999];
+    // let (ranked_array, _, _) = rank_array(&array);
+    // assert_eq!(ranked_array, vec![2, 0, 3, 0, 4, 5]);
 
-    // 上辺を何マス切れるか?
-    for y in 0..n {
-        let mut flag = true; 
-        for x in 0..n {
-            if grid[y][x] == '#' {
-                flag = false;
-                break;
-            }
-        }
-        if !flag {break}
-        down = y+1;
+    // 配列のサイズ
+    let n = array.len();
+
+    // B木<数列中に登場する値, 頻度>
+    let mut btree: BTreeMap<T, usize> = BTreeMap::new();
+    for i in 0..n {
+        *(btree.entry(array[i]).or_insert(0)) += 1;
     }
 
-    // 下辺を何マス切れるか?
-    for yy in 0..n {
-        let y = n-1-yy;
-        let mut flag = true; 
-        for x in 0..n {
-            if grid[y][x] == '#' {
-                flag = false;
-                break;
-            }
+    // 昇順ソート済みの、順位変換済み配列
+    let mut sorted_rank_array = vec![];
+    let mut rank = 0;
+    for (k, frequency) in btree {
+        for j in 0..frequency {
+            sorted_rank_array.push(rank);
         }
-        if !flag {break}
-        up = yy+1;
+        rank += frequency; // sorted_rank_array = [0, 0, 2, 3, 4, 5], 
+        // ここを1にすると、隙間なくなる。
+        // rank += 1; //sorted_rank_array = [0, 0, 1, 2, 3, 4], 
+    }
+    // println!("sorted_rank_array = {:?}, ", sorted_rank_array);
+
+    // 順位から元の値をマップさせる
+    let mut sorted_array = (*array).clone();
+    sorted_array.sort();
+
+    // 元の値から順位を対応させるマップ
+    let mut original_to_rank: HashMap<T, usize> = HashMap::new();
+    for i in 0..n {
+        original_to_rank.insert(sorted_array[i], sorted_rank_array[i]);
     }
 
-    // 左辺を何マス切れるか?
-    for x in 0..n {
-        let mut flag = true; 
-        for y in 0..n {
-            if grid[y][x] == '#' {
-                flag = false;
-                break;
-            }
-        }
-        if !flag {break}
-        right = x+1;
+    // 元の順序の、順位変換済み配列
+    let mut ranked_array: Vec<usize> = vec![];
+    for i in 0..n {
+        ranked_array.push(*(original_to_rank.get(&array[i]).unwrap()));
     }
-    
-    // 右辺を何マス切れるか?
-    for xx in 0..n {
-        let x = n-1-xx;
-        let mut flag = true; 
-        for y in 0..n {
-            if grid[y][x] == '#' {
-                flag = false;
-                break;
-            }
-        }
-        if !flag {break}
-        left = xx+1;
-    }
-    let mut hash = HashMap::new();
-    hash.insert('d', down);
-    hash.insert('u', up);
-    hash.insert('r', right);
-    hash.insert('l', left);
 
-    return hash
-}
-
-
-
-fn rotate(grid: &Vec<Vec<char>>) -> Vec<Vec<char>> {
-    let n = grid.len();
-    let mut grid2 = vec![vec!['.';n];n];
-    for y in 0..n {
-        for x in 0..n {
-            grid2[x][n-1-y] = grid[y][x];
-        }
-    }
-    return grid2
+    return (ranked_array, sorted_array, original_to_rank)
 }

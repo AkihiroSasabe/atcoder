@@ -44,6 +44,10 @@ fn main() {
 
     // 巡回セールスマン問題
     // dp[S][v] := 現在頂点vにいて、訪問済みの頂点集合がS
+    // 参考
+    // https://qiita.com/Ll_e_ki/items/fa475f5bb224ada9be97
+    // https://algo-logic.info/bit-dp/#
+    // https://qiita.com/drken/items/7c6ff2aa4d8fce1c9361#11-bit-dp
     // O(2^N * N^2) = 37_879_808 = 3 * 10^7 < 10^8
     let INF = 1 << 62;
     let mut dp = vec![vec![INF; n]; 1 << n];

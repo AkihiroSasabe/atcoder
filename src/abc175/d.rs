@@ -76,7 +76,7 @@ fn main() {
                 seg.range_update(0, num-1, - pre);
                 seg.range_update(i-1, i-1, sum);
             }
-            // seg.print_not_lazy();
+            // seg.print_all_single_queries();
 
             if sum > 0 {
                 // 全周する
@@ -818,7 +818,7 @@ pub mod lazy_segment_tree {
             self._print_tree("lazy_tree");
             println!("==== ==== ==== ==== ==== =====");
         }
-        pub fn print_not_lazy(&mut self) {
+        pub fn print_all_single_queries(&mut self) {
             println!("==== Mutable Print ====");
             for i in 0..self.list_size {
                 print!("{:?}, ", self.range_query(i, i));

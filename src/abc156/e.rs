@@ -20,6 +20,8 @@ fn main() {
     // WA: 12:10
     // 2024-05-01 8:32-9:36 (1h4min, 解説AC, 競プロフレンズのtweetみた。)
     // Total 2h5min
+    // 自分は、1人の部屋が何個あるか、で場合分けしようとして、解けなかったが、
+    // kyopro_friendsは、0人の部屋が何個あるか、で場合分けしていた。
     input! {
         n: usize,
         k: usize,
@@ -34,8 +36,12 @@ fn main() {
     let mut ans = 0;
     for i in 0..min(k+1, n) {
         // i := 0人の部屋の個数
-        // n個の部屋から、i個の0人部屋を選択: nCi
-        // i個のボールを、N-i個の部屋で分け合う(ボールi個, 仕切り: N-i-1個): i+(n-i-1)_C_i
+        // N個の部屋から、i個の0人部屋を選択: nCi
+        // 「N人を、N-i個の部屋で分け合う。ただし、各部屋は確実に1人以上持つこと。」: n-1_C_i
+        // 証明：
+        // 先に、N-i人を1人ずつN-i個の部屋に配っておいて、残りの人を分配することを考える。
+        // <=> 「i人(=N-(N-i))を、N-i個の部屋で分け合う。ただし、各部屋は0人でもいい。」
+        // ボールi個, 仕切り: N-i-1個: i+(n-i-1)_C_i = n-1_C_i
         ans += get_ncr(n, i, modulus, &factorial) * get_ncr(n-1, i, modulus, &factorial) % modulus;
         ans %= modulus;
     }

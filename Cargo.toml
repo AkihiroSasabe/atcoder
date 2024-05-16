@@ -5645,3 +5645,355 @@ path = "src/abc352/g.rs"
 [[bin]]
 name = "abc352_h"
 path = "src/abc352/h.rs"
+
+[[bin]]
+name = "abc150_a"
+path = "src/abc150/a.rs"
+
+[[bin]]
+name = "abc150_b"
+path = "src/abc150/b.rs"
+
+[[bin]]
+name = "abc150_c"
+path = "src/abc150/c.rs"
+
+[[bin]]
+name = "abc150_d"
+path = "src/abc150/d.rs"
+
+[[bin]]
+name = "abc150_e"
+path = "src/abc150/e.rs"
+
+[[bin]]
+name = "abc150_f"
+path = "src/abc150/f.rs"
+
+[[bin]]
+name = "abc150_g"
+path = "src/abc150/g.rs"
+
+[[bin]]
+name = "abc150_h"
+path = "src/abc150/h.rs"
+
+[[bin]]
+name = "abc130_a"
+path = "src/abc130/a.rs"
+
+[[bin]]
+name = "abc130_b"
+path = "src/abc130/b.rs"
+
+[[bin]]
+name = "abc130_c"
+path = "src/abc130/c.rs"
+
+[[bin]]
+name = "abc130_d"
+path = "src/abc130/d.rs"
+
+[[bin]]
+name = "abc130_e"
+path = "src/abc130/e.rs"
+
+[[bin]]
+name = "abc130_f"
+path = "src/abc130/f.rs"
+
+[[bin]]
+name = "abc130_g"
+path = "src/abc130/g.rs"
+
+[[bin]]
+name = "abc130_h"
+path = "src/abc130/h.rs"
+
+[[bin]]
+name = "abc148_a"
+path = "src/abc148/a.rs"
+
+[[bin]]
+name = "abc148_b"
+path = "src/abc148/b.rs"
+
+[[bin]]
+name = "abc148_c"
+path = "src/abc148/c.rs"
+
+[[bin]]
+name = "abc148_d"
+path = "src/abc148/d.rs"
+
+[[bin]]
+name = "abc148_e"
+path = "src/abc148/e.rs"
+
+[[bin]]
+name = "abc148_f"
+path = "src/abc148/f.rs"
+
+[[bin]]
+name = "abc148_g"
+path = "src/abc148/g.rs"
+
+[[bin]]
+name = "abc148_h"
+path = "src/abc148/h.rs"
+
+[[bin]]
+name = "abc147_a"
+path = "src/abc147/a.rs"
+
+[[bin]]
+name = "abc147_b"
+path = "src/abc147/b.rs"
+
+[[bin]]
+name = "abc147_c"
+path = "src/abc147/c.rs"
+
+[[bin]]
+name = "abc147_d"
+path = "src/abc147/d.rs"
+
+[[bin]]
+name = "abc147_e"
+path = "src/abc147/e.rs"
+
+[[bin]]
+name = "abc147_f"
+path = "src/abc147/f.rs"
+
+[[bin]]
+name = "abc147_g"
+path = "src/abc147/g.rs"
+
+[[bin]]
+name = "abc147_h"
+path = "src/abc147/h.rs"
+
+[[bin]]
+name = "abc151_a"
+path = "src/abc151/a.rs"
+
+[[bin]]
+name = "abc151_b"
+path = "src/abc151/b.rs"
+
+[[bin]]
+name = "abc151_c"
+path = "src/abc151/c.rs"
+
+[[bin]]
+name = "abc151_d"
+path = "src/abc151/d.rs"
+
+[[bin]]
+name = "abc151_e"
+path = "src/abc151/e.rs"
+
+[[bin]]
+name = "abc151_f"
+path = "src/abc151/f.rs"
+
+[[bin]]
+name = "abc151_g"
+path = "src/abc151/g.rs"
+
+[[bin]]
+name = "abc151_h"
+path = "src/abc151/h.rs"
+
+[[bin]]
+name = "abc145_a"
+path = "src/abc145/a.rs"
+
+[[bin]]
+name = "abc145_b"
+path = "src/abc145/b.rs"
+
+[[bin]]
+name = "abc145_c"
+path = "src/abc145/c.rs"
+
+[[bin]]
+name = "abc145_d"
+path = "src/abc145/d.rs"
+
+[[bin]]
+name = "abc145_e"
+path = "src/abc145/e.rs"
+
+[[bin]]
+name = "abc145_f"
+path = "src/abc145/f.rs"
+
+[[bin]]
+name = "abc145_g"
+path = "src/abc145/g.rs"
+
+[[bin]]
+name = "abc145_h"
+path = "src/abc145/h.rs"
+
+[[bin]]
+name = "abc144_a"
+path = "src/abc144/a.rs"
+
+[[bin]]
+name = "abc144_b"
+path = "src/abc144/b.rs"
+
+[[bin]]
+name = "abc144_c"
+path = "src/abc144/c.rs"
+
+[[bin]]
+name = "abc144_d"
+path = "src/abc144/d.rs"
+
+[[bin]]
+name = "abc144_e"
+path = "src/abc144/e.rs"
+
+[[bin]]
+name = "abc144_f"
+path = "src/abc144/f.rs"
+
+[[bin]]
+name = "abc144_g"
+path = "src/abc144/g.rs"
+
+[[bin]]
+name = "abc144_h"
+path = "src/abc144/h.rs"
+
+[[bin]]
+name = "abc141_a"
+path = "src/abc141/a.rs"
+
+[[bin]]
+name = "abc141_b"
+path = "src/abc141/b.rs"
+
+[[bin]]
+name = "abc141_c"
+path = "src/abc141/c.rs"
+
+[[bin]]
+name = "abc141_d"
+path = "src/abc141/d.rs"
+
+[[bin]]
+name = "abc141_e"
+path = "src/abc141/e.rs"
+
+[[bin]]
+name = "abc141_f"
+path = "src/abc141/f.rs"
+
+[[bin]]
+name = "abc141_g"
+path = "src/abc141/g.rs"
+
+[[bin]]
+name = "abc141_h"
+path = "src/abc141/h.rs"
+
+[[bin]]
+name = "abc353_a"
+path = "src/abc353/a.rs"
+
+[[bin]]
+name = "abc353_b"
+path = "src/abc353/b.rs"
+
+[[bin]]
+name = "abc353_c"
+path = "src/abc353/c.rs"
+
+[[bin]]
+name = "abc353_d"
+path = "src/abc353/d.rs"
+
+[[bin]]
+name = "abc353_e"
+path = "src/abc353/e.rs"
+
+[[bin]]
+name = "abc353_f"
+path = "src/abc353/f.rs"
+
+[[bin]]
+name = "abc353_g"
+path = "src/abc353/g.rs"
+
+[[bin]]
+name = "abc353_h"
+path = "src/abc353/h.rs"
+
+[[bin]]
+name = "abc142_a"
+path = "src/abc142/a.rs"
+
+[[bin]]
+name = "abc142_b"
+path = "src/abc142/b.rs"
+
+[[bin]]
+name = "abc142_c"
+path = "src/abc142/c.rs"
+
+[[bin]]
+name = "abc142_d"
+path = "src/abc142/d.rs"
+
+[[bin]]
+name = "abc142_e"
+path = "src/abc142/e.rs"
+
+[[bin]]
+name = "abc142_f"
+path = "src/abc142/f.rs"
+
+[[bin]]
+name = "abc142_g"
+path = "src/abc142/g.rs"
+
+[[bin]]
+name = "abc142_h"
+path = "src/abc142/h.rs"
+
+[[bin]]
+name = "abc138_a"
+path = "src/abc138/a.rs"
+
+[[bin]]
+name = "abc138_b"
+path = "src/abc138/b.rs"
+
+[[bin]]
+name = "abc138_c"
+path = "src/abc138/c.rs"
+
+[[bin]]
+name = "abc138_d"
+path = "src/abc138/d.rs"
+
+[[bin]]
+name = "abc138_e"
+path = "src/abc138/e.rs"
+
+[[bin]]
+name = "abc138_f"
+path = "src/abc138/f.rs"
+
+[[bin]]
+name = "abc138_g"
+path = "src/abc138/g.rs"
+
+[[bin]]
+name = "abc138_h"
+path = "src/abc138/h.rs"

@@ -14,7 +14,7 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
-    // 2024-05-18 12:32-
+    // 2024-05-18 12:32-12:55 (23min)
     input! {
         n: usize, // N件のバイト
         m: usize, // m日あとまでに、稼げる最大

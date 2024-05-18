@@ -5997,3 +5997,35 @@ path = "src/abc138/g.rs"
 [[bin]]
 name = "abc138_h"
 path = "src/abc138/h.rs"
+
+[[bin]]
+name = "abc139_a"
+path = "src/abc139/a.rs"
+
+[[bin]]
+name = "abc139_b"
+path = "src/abc139/b.rs"
+
+[[bin]]
+name = "abc139_c"
+path = "src/abc139/c.rs"
+
+[[bin]]
+name = "abc139_d"
+path = "src/abc139/d.rs"
+
+[[bin]]
+name = "abc139_e"
+path = "src/abc139/e.rs"
+
+[[bin]]
+name = "abc139_f"
+path = "src/abc139/f.rs"
+
+[[bin]]
+name = "abc139_g"
+path = "src/abc139/g.rs"
+
+[[bin]]
+name = "abc139_h"
+path = "src/abc139/h.rs"

@@ -38,7 +38,7 @@ fn main() {
             bs += 1;
         }
 
-        if xs[x] >= n || ys[y] >= n || aa >= n || bs >= n {
+        if xs[x] == n || ys[y] == n || aa == n || bs == n {
             println!("{}", i+1);
             return
         }

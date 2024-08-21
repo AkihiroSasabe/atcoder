@@ -50,6 +50,7 @@ use proconio::marker::Chars;
 use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
+use rand::Rng;
 fn main() {
     input! {
         

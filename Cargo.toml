@@ -6,9 +6,13 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-proconio = "0.3.6"
+# AtCoder のRustの環境は以下を参照
+# https://qiita.com/fal_rnd/items/a76fc874f67f597ce33a
+# https://docs.google.com/spreadsheets/d/1HXyOXt5bKwhKWXruzUvfMFHQtBxfZQ0047W7VVObnXI/edit?gid=408033513#gid=408033513
+proconio = "0.4.5"
 itertools = "0.10.3"
 superslice = "1.0.0"
+rand = { version = "=0.8.5", features = ["small_rng", "min_const_gen"] }
 
 [[bin]]
 name = "make_contest_folder"
@@ -7341,3 +7345,131 @@ path = "src/abc098/g.rs"
 [[bin]]
 name = "abc098_h"
 path = "src/abc098/h.rs"
+
+[[bin]]
+name = "abc097_a"
+path = "src/abc097/a.rs"
+
+[[bin]]
+name = "abc097_b"
+path = "src/abc097/b.rs"
+
+[[bin]]
+name = "abc097_c"
+path = "src/abc097/c.rs"
+
+[[bin]]
+name = "abc097_d"
+path = "src/abc097/d.rs"
+
+[[bin]]
+name = "abc097_e"
+path = "src/abc097/e.rs"
+
+[[bin]]
+name = "abc097_f"
+path = "src/abc097/f.rs"
+
+[[bin]]
+name = "abc097_g"
+path = "src/abc097/g.rs"
+
+[[bin]]
+name = "abc097_h"
+path = "src/abc097/h.rs"
+
+[[bin]]
+name = "abc096_a"
+path = "src/abc096/a.rs"
+
+[[bin]]
+name = "abc096_b"
+path = "src/abc096/b.rs"
+
+[[bin]]
+name = "abc096_c"
+path = "src/abc096/c.rs"
+
+[[bin]]
+name = "abc096_d"
+path = "src/abc096/d.rs"
+
+[[bin]]
+name = "abc096_e"
+path = "src/abc096/e.rs"
+
+[[bin]]
+name = "abc096_f"
+path = "src/abc096/f.rs"
+
+[[bin]]
+name = "abc096_g"
+path = "src/abc096/g.rs"
+
+[[bin]]
+name = "abc096_h"
+path = "src/abc096/h.rs"
+
+[[bin]]
+name = "abc095_a"
+path = "src/abc095/a.rs"
+
+[[bin]]
+name = "abc095_b"
+path = "src/abc095/b.rs"
+
+[[bin]]
+name = "abc095_c"
+path = "src/abc095/c.rs"
+
+[[bin]]
+name = "abc095_d"
+path = "src/abc095/d.rs"
+
+[[bin]]
+name = "abc095_e"
+path = "src/abc095/e.rs"
+
+[[bin]]
+name = "abc095_f"
+path = "src/abc095/f.rs"
+
+[[bin]]
+name = "abc095_g"
+path = "src/abc095/g.rs"
+
+[[bin]]
+name = "abc095_h"
+path = "src/abc095/h.rs"
+
+[[bin]]
+name = "abc367_a"
+path = "src/abc367/a.rs"
+
+[[bin]]
+name = "abc367_b"
+path = "src/abc367/b.rs"
+
+[[bin]]
+name = "abc367_c"
+path = "src/abc367/c.rs"
+
+[[bin]]
+name = "abc367_d"
+path = "src/abc367/d.rs"
+
+[[bin]]
+name = "abc367_e"
+path = "src/abc367/e.rs"
+
+[[bin]]
+name = "abc367_f"
+path = "src/abc367/f.rs"
+
+[[bin]]
+name = "abc367_g"
+path = "src/abc367/g.rs"
+
+[[bin]]
+name = "abc367_h"
+path = "src/abc367/h.rs"

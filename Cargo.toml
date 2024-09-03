@@ -7473,3 +7473,291 @@ path = "src/abc367/g.rs"
 [[bin]]
 name = "abc367_h"
 path = "src/abc367/h.rs"
+
+[[bin]]
+name = "abc093_a"
+path = "src/abc093/a.rs"
+
+[[bin]]
+name = "abc093_b"
+path = "src/abc093/b.rs"
+
+[[bin]]
+name = "abc093_c"
+path = "src/abc093/c.rs"
+
+[[bin]]
+name = "abc093_d"
+path = "src/abc093/d.rs"
+
+[[bin]]
+name = "abc093_e"
+path = "src/abc093/e.rs"
+
+[[bin]]
+name = "abc093_f"
+path = "src/abc093/f.rs"
+
+[[bin]]
+name = "abc093_g"
+path = "src/abc093/g.rs"
+
+[[bin]]
+name = "abc093_h"
+path = "src/abc093/h.rs"
+
+[[bin]]
+name = "abc092_a"
+path = "src/abc092/a.rs"
+
+[[bin]]
+name = "abc092_b"
+path = "src/abc092/b.rs"
+
+[[bin]]
+name = "abc092_c"
+path = "src/abc092/c.rs"
+
+[[bin]]
+name = "abc092_d"
+path = "src/abc092/d.rs"
+
+[[bin]]
+name = "abc092_e"
+path = "src/abc092/e.rs"
+
+[[bin]]
+name = "abc092_f"
+path = "src/abc092/f.rs"
+
+[[bin]]
+name = "abc092_g"
+path = "src/abc092/g.rs"
+
+[[bin]]
+name = "abc092_h"
+path = "src/abc092/h.rs"
+
+[[bin]]
+name = "abc091_a"
+path = "src/abc091/a.rs"
+
+[[bin]]
+name = "abc091_b"
+path = "src/abc091/b.rs"
+
+[[bin]]
+name = "abc091_c"
+path = "src/abc091/c.rs"
+
+[[bin]]
+name = "abc091_d"
+path = "src/abc091/d.rs"
+
+[[bin]]
+name = "abc091_e"
+path = "src/abc091/e.rs"
+
+[[bin]]
+name = "abc091_f"
+path = "src/abc091/f.rs"
+
+[[bin]]
+name = "abc091_g"
+path = "src/abc091/g.rs"
+
+[[bin]]
+name = "abc091_h"
+path = "src/abc091/h.rs"
+
+[[bin]]
+name = "abc368_a"
+path = "src/abc368/a.rs"
+
+[[bin]]
+name = "abc368_b"
+path = "src/abc368/b.rs"
+
+[[bin]]
+name = "abc368_c"
+path = "src/abc368/c.rs"
+
+[[bin]]
+name = "abc368_d"
+path = "src/abc368/d.rs"
+
+[[bin]]
+name = "abc368_e"
+path = "src/abc368/e.rs"
+
+[[bin]]
+name = "abc368_f"
+path = "src/abc368/f.rs"
+
+[[bin]]
+name = "abc368_g"
+path = "src/abc368/g.rs"
+
+[[bin]]
+name = "abc368_h"
+path = "src/abc368/h.rs"
+
+[[bin]]
+name = "abc089_a"
+path = "src/abc089/a.rs"
+
+[[bin]]
+name = "abc089_b"
+path = "src/abc089/b.rs"
+
+[[bin]]
+name = "abc089_c"
+path = "src/abc089/c.rs"
+
+[[bin]]
+name = "abc089_d"
+path = "src/abc089/d.rs"
+
+[[bin]]
+name = "abc089_e"
+path = "src/abc089/e.rs"
+
+[[bin]]
+name = "abc089_f"
+path = "src/abc089/f.rs"
+
+[[bin]]
+name = "abc089_g"
+path = "src/abc089/g.rs"
+
+[[bin]]
+name = "abc089_h"
+path = "src/abc089/h.rs"
+
+[[bin]]
+name = "abc087_a"
+path = "src/abc087/a.rs"
+
+[[bin]]
+name = "abc087_b"
+path = "src/abc087/b.rs"
+
+[[bin]]
+name = "abc087_c"
+path = "src/abc087/c.rs"
+
+[[bin]]
+name = "abc087_d"
+path = "src/abc087/d.rs"
+
+[[bin]]
+name = "abc087_e"
+path = "src/abc087/e.rs"
+
+[[bin]]
+name = "abc087_f"
+path = "src/abc087/f.rs"
+
+[[bin]]
+name = "abc087_g"
+path = "src/abc087/g.rs"
+
+[[bin]]
+name = "abc087_h"
+path = "src/abc087/h.rs"
+
+[[bin]]
+name = "abc086_a"
+path = "src/abc086/a.rs"
+
+[[bin]]
+name = "abc086_b"
+path = "src/abc086/b.rs"
+
+[[bin]]
+name = "abc086_c"
+path = "src/abc086/c.rs"
+
+[[bin]]
+name = "abc086_d"
+path = "src/abc086/d.rs"
+
+[[bin]]
+name = "abc086_e"
+path = "src/abc086/e.rs"
+
+[[bin]]
+name = "abc086_f"
+path = "src/abc086/f.rs"
+
+[[bin]]
+name = "abc086_g"
+path = "src/abc086/g.rs"
+
+[[bin]]
+name = "abc086_h"
+path = "src/abc086/h.rs"
+
+[[bin]]
+name = "abc085_a"
+path = "src/abc085/a.rs"
+
+[[bin]]
+name = "abc085_b"
+path = "src/abc085/b.rs"
+
+[[bin]]
+name = "abc085_c"
+path = "src/abc085/c.rs"
+
+[[bin]]
+name = "abc085_d"
+path = "src/abc085/d.rs"
+
+[[bin]]
+name = "abc085_e"
+path = "src/abc085/e.rs"
+
+[[bin]]
+name = "abc085_f"
+path = "src/abc085/f.rs"
+
+[[bin]]
+name = "abc085_g"
+path = "src/abc085/g.rs"
+
+[[bin]]
+name = "abc085_h"
+path = "src/abc085/h.rs"
+
+[[bin]]
+name = "abc369_a"
+path = "src/abc369/a.rs"
+
+[[bin]]
+name = "abc369_b"
+path = "src/abc369/b.rs"
+
+[[bin]]
+name = "abc369_c"
+path = "src/abc369/c.rs"
+
+[[bin]]
+name = "abc369_d"
+path = "src/abc369/d.rs"
+
+[[bin]]
+name = "abc369_e"
+path = "src/abc369/e.rs"
+
+[[bin]]
+name = "abc369_f"
+path = "src/abc369/f.rs"
+
+[[bin]]
+name = "abc369_g"
+path = "src/abc369/g.rs"
+
+[[bin]]
+name = "abc369_h"
+path = "src/abc369/h.rs"

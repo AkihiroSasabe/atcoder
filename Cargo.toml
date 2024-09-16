@@ -7857,3 +7857,67 @@ path = "src/abc080/g.rs"
 [[bin]]
 name = "abc080_h"
 path = "src/abc080/h.rs"
+
+[[bin]]
+name = "abc078_a"
+path = "src/abc078/a.rs"
+
+[[bin]]
+name = "abc078_b"
+path = "src/abc078/b.rs"
+
+[[bin]]
+name = "abc078_c"
+path = "src/abc078/c.rs"
+
+[[bin]]
+name = "abc078_d"
+path = "src/abc078/d.rs"
+
+[[bin]]
+name = "abc078_e"
+path = "src/abc078/e.rs"
+
+[[bin]]
+name = "abc078_f"
+path = "src/abc078/f.rs"
+
+[[bin]]
+name = "abc078_g"
+path = "src/abc078/g.rs"
+
+[[bin]]
+name = "abc078_h"
+path = "src/abc078/h.rs"
+
+[[bin]]
+name = "abc076_a"
+path = "src/abc076/a.rs"
+
+[[bin]]
+name = "abc076_b"
+path = "src/abc076/b.rs"
+
+[[bin]]
+name = "abc076_c"
+path = "src/abc076/c.rs"
+
+[[bin]]
+name = "abc076_d"
+path = "src/abc076/d.rs"
+
+[[bin]]
+name = "abc076_e"
+path = "src/abc076/e.rs"
+
+[[bin]]
+name = "abc076_f"
+path = "src/abc076/f.rs"
+
+[[bin]]
+name = "abc076_g"
+path = "src/abc076/g.rs"
+
+[[bin]]
+name = "abc076_h"
+path = "src/abc076/h.rs"

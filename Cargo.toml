@@ -13,6 +13,8 @@ proconio = "0.4.5"
 itertools = "0.10.3"
 superslice = "1.0.0"
 rand = { version = "=0.8.5", features = ["small_rng", "min_const_gen"] }
+num = "=0.4.1"
+
 
 [[bin]]
 name = "make_contest_folder"
@@ -8017,3 +8019,163 @@ path = "src/abc074/g.rs"
 [[bin]]
 name = "abc074_h"
 path = "src/abc074/h.rs"
+
+[[bin]]
+name = "abc073_a"
+path = "src/abc073/a.rs"
+
+[[bin]]
+name = "abc073_b"
+path = "src/abc073/b.rs"
+
+[[bin]]
+name = "abc073_c"
+path = "src/abc073/c.rs"
+
+[[bin]]
+name = "abc073_d"
+path = "src/abc073/d.rs"
+
+[[bin]]
+name = "abc073_e"
+path = "src/abc073/e.rs"
+
+[[bin]]
+name = "abc073_f"
+path = "src/abc073/f.rs"
+
+[[bin]]
+name = "abc073_g"
+path = "src/abc073/g.rs"
+
+[[bin]]
+name = "abc073_h"
+path = "src/abc073/h.rs"
+
+[[bin]]
+name = "abc068_a"
+path = "src/abc068/a.rs"
+
+[[bin]]
+name = "abc068_b"
+path = "src/abc068/b.rs"
+
+[[bin]]
+name = "abc068_c"
+path = "src/abc068/c.rs"
+
+[[bin]]
+name = "abc068_d"
+path = "src/abc068/d.rs"
+
+[[bin]]
+name = "abc068_e"
+path = "src/abc068/e.rs"
+
+[[bin]]
+name = "abc068_f"
+path = "src/abc068/f.rs"
+
+[[bin]]
+name = "abc068_g"
+path = "src/abc068/g.rs"
+
+[[bin]]
+name = "abc068_h"
+path = "src/abc068/h.rs"
+
+[[bin]]
+name = "abc372_a"
+path = "src/abc372/a.rs"
+
+[[bin]]
+name = "abc372_b"
+path = "src/abc372/b.rs"
+
+[[bin]]
+name = "abc372_c"
+path = "src/abc372/c.rs"
+
+[[bin]]
+name = "abc372_d"
+path = "src/abc372/d.rs"
+
+[[bin]]
+name = "abc372_e"
+path = "src/abc372/e.rs"
+
+[[bin]]
+name = "abc372_f"
+path = "src/abc372/f.rs"
+
+[[bin]]
+name = "abc372_g"
+path = "src/abc372/g.rs"
+
+[[bin]]
+name = "abc372_h"
+path = "src/abc372/h.rs"
+
+[[bin]]
+name = "abc067_a"
+path = "src/abc067/a.rs"
+
+[[bin]]
+name = "abc067_b"
+path = "src/abc067/b.rs"
+
+[[bin]]
+name = "abc067_c"
+path = "src/abc067/c.rs"
+
+[[bin]]
+name = "abc067_d"
+path = "src/abc067/d.rs"
+
+[[bin]]
+name = "abc067_e"
+path = "src/abc067/e.rs"
+
+[[bin]]
+name = "abc067_f"
+path = "src/abc067/f.rs"
+
+[[bin]]
+name = "abc067_g"
+path = "src/abc067/g.rs"
+
+[[bin]]
+name = "abc067_h"
+path = "src/abc067/h.rs"
+
+[[bin]]
+name = "abc066_a"
+path = "src/abc066/a.rs"
+
+[[bin]]
+name = "abc066_b"
+path = "src/abc066/b.rs"
+
+[[bin]]
+name = "abc066_c"
+path = "src/abc066/c.rs"
+
+[[bin]]
+name = "abc066_d"
+path = "src/abc066/d.rs"
+
+[[bin]]
+name = "abc066_e"
+path = "src/abc066/e.rs"
+
+[[bin]]
+name = "abc066_f"
+path = "src/abc066/f.rs"
+
+[[bin]]
+name = "abc066_g"
+path = "src/abc066/g.rs"
+
+[[bin]]
+name = "abc066_h"
+path = "src/abc066/h.rs"

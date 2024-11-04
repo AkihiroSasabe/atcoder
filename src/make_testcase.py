@@ -5,6 +5,8 @@ import numpy as np
 def main():
     example1()
     # example2()
+    exmaple_tree()
+
 
 def print_2d_ndarray(array):
     # Numpyの2次元配列をprintする関数
@@ -76,6 +78,27 @@ def example2():
             print("{}".format(a[i][j]), end=' ')
         print("")
 
+def exmaple_tree():
+    # 木のテストケースを作る関数
+    # 例
+    # N
+    # u_1 v_1
+    # u_2 v_2
+    # u_3 v_3
+    # ...
+    # u_N-1 v_N-1
+
+    n_max = 15
+    n = random.randrange(10, n_max)
+
+    uvs = [[1, 2]]
+    for u in range(3, n+1):
+        v = np.random.randint(1, u)
+        uvs.append([u, v])
+    
+    print(n)
+    uvs = np.array(uvs)
+    print_2d_ndarray(uvs)
 
 if __name__ == "__main__":
     main()

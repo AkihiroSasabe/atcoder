@@ -93,16 +93,16 @@ fn main() {
 
 // https://algo-logic.info/trie-tree/
 // 挿入と検索
-// 挿入(insert)：文字列をトライ木に保存する
-// 検索(search)：文字列がトライ木に保存されているか確認する
+// 挿入(insert)：文字列をトライ木に保存する O(M Klog(K))
+// 検索(search)：文字列がトライ木に保存されているか確認する O(MlogK)
+// (Mは単語の長さ。Kは登場する文字の種類。アルファベットならK=26)
 // 使い方
 // use trie::Trie;
 // let mut trie = Trie::new();
-// trie.insert(&"hello".chars().collect::<Vec<char>>(), 0); // &vec!['h', 'e', 'l', 'l', 'o'] を検索しているのと同じ。
-// trie.insert(&"world".chars().collect::<Vec<char>>(), 1);
-// println!("Trie: {:?}", trie);
-// trie.print_all_nodes();
-
+// let firework = "firework".chars().collect::<Vec<char>>();
+// trie.insert(&firework, 1);
+// println!("is_exact_match for 'firework': {}", trie.is_exact_match(&firework));
+// trie.print_tree();
 
 // 参考実装: https://algo-logic.info/trie-tree/
 // ただし、 node の next を children というメンバー名に変えている。

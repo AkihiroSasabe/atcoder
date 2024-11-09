@@ -90,7 +90,8 @@ fn main() {
 // snuuk
 // 4
 
-
+// 例題
+// ABC377-G https://atcoder.jp/contests/abc377/tasks/abc377_g
 // https://algo-logic.info/trie-tree/
 // 挿入と検索
 // 挿入(insert)：文字列をトライ木に保存する O(M Klog(K))

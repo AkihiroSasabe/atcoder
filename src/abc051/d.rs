@@ -35,8 +35,8 @@ fn main() {
     }
 
     // my_solve(n, m, graph, edges);
-    educational_slow_solve(n, m, graph, edges);
-    // educational_first_solve(n, m, graph, edges);
+    // educational_slow_solve(n, m, graph, edges);
+    educational_first_solve(n, m, graph, edges);
 
 }
 
@@ -86,12 +86,12 @@ fn educational_first_solve(n: usize, m: usize, graph: Vec<Vec<(usize, usize)>>, 
 }
 
 fn my_solve(n: usize, m: usize, graph: Vec<Vec<(usize, usize)>>, mut edges: Vec<(usize, usize, usize)>) {
-    // ACしたけど、以下のケースの答えが、1になるので、駄目だと思った。 0 のはず。
-    // 答えは、0になるはず。2->3 の辺は、通らなくても、2->1->3と辿れば最短距離2でいけるけど、含んでもいいはず。
+    // ABC51-Dで、「どの異なる 2 頂点間の、どの最短経路にも含まれない辺の数を求めてください。」とあるのですが、頂点uと頂点vの最短経路が複数あって場合は、そのうちの1本の最短経路が辺eを含んでいる場合でも、eは「どの異なる 2 頂点間の、どの最短経路にも含まれない辺」とすべきでしょうか?
+    // 例えば、以下のような入力例の場合、頂点1と頂点3の最短経路長は2で経路は2本（1->2->3と1->3）ありますが、1->3 という辺は「どの異なる 2 頂点間の、どの最短経路にも含まれない辺」という扱いになるのでしょうか?
     // 3 3
     // 1 2 1
+    // 1 3 2
     // 2 3 1
-    // 2 3 2
     let dp = floyd_warshall(&graph);
     let mut ans = 0;
     for i in 0..m {

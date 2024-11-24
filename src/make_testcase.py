@@ -5,8 +5,22 @@ import numpy as np
 def main():
     example1()
     # example2()
-    exmaple_tree()
+    # exmaple_tree()
 
+def print_array(array):
+    if len(array.shape) == 1:
+        print_1d_ndarray(array)
+    elif len(array.shape) == 2:
+        print_2d_ndarray(array)
+
+def print_1d_ndarray(array):
+    # Numpyの1次元配列をprintする関数
+    
+    # joinは、Pythonの文字列メソッドの一つで、
+    # リストやタプルなどの「文字列の要素」を特定の区切り文字で
+    # 結合して一つの文字列を作るために使います。
+    # "区切り文字".join(文字列のリスト)
+    print(" ".join(map(str, array))) # 空白文字で区切って表示
 
 def print_2d_ndarray(array):
     # Numpyの2次元配列をprintする関数
@@ -28,7 +42,7 @@ def example1():
     A = np.random.randint(1, 40, size=(h,w))
 
     print(h, w)
-    print_2d_ndarray(A)
+    print_array(A)
     
     # 実行結果の例
     # 6 7

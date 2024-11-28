@@ -36,7 +36,7 @@ fn main() {
         // proconioを必ず使うので用意
         let content0 = String::from(
 "#![allow(dead_code, unused_imports)]
-use proconio::{input, marker::Usize1};
+use proconio::{input, marker::{Usize1, Isize1}};
 use itertools::Itertools;
 use std::cmp::{max, min};
 use std::cmp::Ordering;

@@ -22,7 +22,7 @@ fn main() {
         n: usize,
         q: usize,
     }
-    let mut uft = UnionFindTree::new(n);
+    let mut uft = UnionFindTreeWithSets::new(n);
     let mut nums = vec![1; n]; // nums[c] := c色の数
     let mut colors = vec![]; // colors[x] := xの色
     for i in 0..n {
@@ -84,6 +84,7 @@ fn main() {
 
 
 
+// https://atcoder.jp/contests/abc380/tasks/abc380_e
 // UnionFindTreeWithSets: UFTで、頂点の集合も取得できるようにした。トータルの結合計算量が、O(Nlog(N))で、ちょっと遅くなっている。
 // Union-Find
 // グループの管理（グループ同士の結合や、要素同士の所属か同じか判定）するのに便利なデータ構造
@@ -105,7 +106,7 @@ impl UnionFindTreeWithSets {
         for i in 0..n {
             sets[i].insert(i);
         }
-        return UnionFindTree {parents, sizes, sets}
+        return UnionFindTreeWithSets {parents, sizes, sets}
     }
 
     // 根を求める。経路圧縮により計算量を削減
@@ -151,10 +152,12 @@ impl UnionFindTreeWithSets {
         self.sizes[parent] += self.size(child);
         self.parents[child] = parent;
 
-        // `std::mem::take`で`self.sets[child]`の所有権を一時的に奪う
-        let child_set = std::mem::take(&mut self.sets[child]);
-        for ch in child_set {
-            self.sets[parent].insert(ch);
+        if child != parent {
+            // `std::mem::take`で`self.sets[child]`の所有権を一時的に奪う
+            let child_set = std::mem::take(&mut self.sets[child]);
+            for ch in child_set {
+                self.sets[parent].insert(ch);
+            }
         }
 
         return true

@@ -3,6 +3,7 @@
 # How to use:
 #     (1) Copy the following 3 scripts to target contest directry.
 #     $ cp make_testcase.py solver.py debug.sh ./abcXXX/
+#     $ cp ../make_testcase.py ../solver.py ../debug.sh ./
 #     (2) Create the correct Python or Rust script (naive solution or someone else's AC solution)
 #     $ code solver.py 
 #     $ code h.rs 
@@ -32,8 +33,10 @@ while true; do
     # (2)自分の提出コードで解答
     my_output=$(cargo run --bin ${CONTEST_NAME}_${1} < test_case.txt)
     # (3)誰かのACした提出コードで解答
-    # ac_output=$(cargo run --bin ${CONTEST_NAME}_h < test_case.txt)
-    ac_output=$(python3 solver.py < test_case.txt)
+    # Rust h問題を使うこと
+    ac_output=$(cargo run --bin ${CONTEST_NAME}_h < test_case.txt)
+    # Python
+    # ac_output=$(python3 solver.py < test_case.txt)
 
     echo "My answer ===="
     echo ${my_output}

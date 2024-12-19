@@ -3,31 +3,35 @@ import random
 import numpy as np
 
 def main():
-    example1()
-    # example2()
+    example()
+    # example_2d_darray()
+    # example_2d_darray_2()
     # exmaple_tree()
 
-def print_array(array):
-    if len(array.shape) == 1:
-        print_1d_ndarray(array)
-    elif len(array.shape) == 2:
-        print_2d_ndarray(array)
+def example():
+    # テストケースを作る関数
+    # n
+    # s1
+    # s2
+    # ...
+    # sn
+    # の形式で、出力する。
 
-def print_1d_ndarray(array):
-    # Numpyの1次元配列をprintする関数
-    
-    # joinは、Pythonの文字列メソッドの一つで、
-    # リストやタプルなどの「文字列の要素」を特定の区切り文字で
-    # 結合して一つの文字列を作るために使います。
-    # "区切り文字".join(文字列のリスト)
-    print(" ".join(map(str, array))) # 空白文字で区切って表示
+    # 以下例
+    n_max = 10
+    # k_max = 100
 
-def print_2d_ndarray(array):
-    # Numpyの2次元配列をprintする関数
-    for row in array:
-        print(' '.join(map(str, row)))
+    n = random.randrange(1, n_max)
+    # k = random.randrange(1, k_max)
 
-def example1():
+    print(n)
+    for i in range(n):
+        si = random.randrange(1, 10)
+        print(si)
+    return
+
+
+def example_2d_darray():
     # テストケースを作る関数
     # h w
     # A
@@ -53,7 +57,7 @@ def example1():
     # 36 3 27 39 20 29 25
     # 7 12 4 3 6 20 31
 
-def example2():
+def example_2d_darray_2():
     """
     以下のテストケースを作るコードである
     入力
@@ -113,6 +117,27 @@ def exmaple_tree():
     print(n)
     uvs = np.array(uvs)
     print_2d_ndarray(uvs)
+
+def print_array(array):
+    if len(array.shape) == 1:
+        print_1d_ndarray(array)
+    elif len(array.shape) == 2:
+        print_2d_ndarray(array)
+
+def print_1d_ndarray(array):
+    # Numpyの1次元配列をprintする関数
+    
+    # joinは、Pythonの文字列メソッドの一つで、
+    # リストやタプルなどの「文字列の要素」を特定の区切り文字で
+    # 結合して一つの文字列を作るために使います。
+    # "区切り文字".join(文字列のリスト)
+    print(" ".join(map(str, array))) # 空白文字で区切って表示
+
+def print_2d_ndarray(array):
+    # Numpyの2次元配列をprintする関数
+    for row in array:
+        print(' '.join(map(str, row)))
+
 
 if __name__ == "__main__":
     main()

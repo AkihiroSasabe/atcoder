@@ -14,7 +14,7 @@ itertools = "0.10.3"
 superslice = "1.0.0"
 rand = { version = "=0.8.5", features = ["small_rng", "min_const_gen"] }
 num = "=0.4.1"
-
+num-bigint= "=0.4.3"
 
 [[bin]]
 name = "make_contest_folder"
@@ -9139,3 +9139,291 @@ path = "src/abc382/g.rs"
 [[bin]]
 name = "abc382_h"
 path = "src/abc382/h.rs"
+
+[[bin]]
+name = "abc037_a"
+path = "src/abc037/a.rs"
+
+[[bin]]
+name = "abc037_b"
+path = "src/abc037/b.rs"
+
+[[bin]]
+name = "abc037_c"
+path = "src/abc037/c.rs"
+
+[[bin]]
+name = "abc037_d"
+path = "src/abc037/d.rs"
+
+[[bin]]
+name = "abc037_e"
+path = "src/abc037/e.rs"
+
+[[bin]]
+name = "abc037_f"
+path = "src/abc037/f.rs"
+
+[[bin]]
+name = "abc037_g"
+path = "src/abc037/g.rs"
+
+[[bin]]
+name = "abc037_h"
+path = "src/abc037/h.rs"
+
+[[bin]]
+name = "abc035_a"
+path = "src/abc035/a.rs"
+
+[[bin]]
+name = "abc035_b"
+path = "src/abc035/b.rs"
+
+[[bin]]
+name = "abc035_c"
+path = "src/abc035/c.rs"
+
+[[bin]]
+name = "abc035_d"
+path = "src/abc035/d.rs"
+
+[[bin]]
+name = "abc035_e"
+path = "src/abc035/e.rs"
+
+[[bin]]
+name = "abc035_f"
+path = "src/abc035/f.rs"
+
+[[bin]]
+name = "abc035_g"
+path = "src/abc035/g.rs"
+
+[[bin]]
+name = "abc035_h"
+path = "src/abc035/h.rs"
+
+[[bin]]
+name = "abc383_a"
+path = "src/abc383/a.rs"
+
+[[bin]]
+name = "abc383_b"
+path = "src/abc383/b.rs"
+
+[[bin]]
+name = "abc383_c"
+path = "src/abc383/c.rs"
+
+[[bin]]
+name = "abc383_d"
+path = "src/abc383/d.rs"
+
+[[bin]]
+name = "abc383_e"
+path = "src/abc383/e.rs"
+
+[[bin]]
+name = "abc383_f"
+path = "src/abc383/f.rs"
+
+[[bin]]
+name = "abc383_g"
+path = "src/abc383/g.rs"
+
+[[bin]]
+name = "abc383_h"
+path = "src/abc383/h.rs"
+
+[[bin]]
+name = "abc034_a"
+path = "src/abc034/a.rs"
+
+[[bin]]
+name = "abc034_b"
+path = "src/abc034/b.rs"
+
+[[bin]]
+name = "abc034_c"
+path = "src/abc034/c.rs"
+
+[[bin]]
+name = "abc034_d"
+path = "src/abc034/d.rs"
+
+[[bin]]
+name = "abc034_e"
+path = "src/abc034/e.rs"
+
+[[bin]]
+name = "abc034_f"
+path = "src/abc034/f.rs"
+
+[[bin]]
+name = "abc034_g"
+path = "src/abc034/g.rs"
+
+[[bin]]
+name = "abc034_h"
+path = "src/abc034/h.rs"
+
+[[bin]]
+name = "abc032_a"
+path = "src/abc032/a.rs"
+
+[[bin]]
+name = "abc032_b"
+path = "src/abc032/b.rs"
+
+[[bin]]
+name = "abc032_c"
+path = "src/abc032/c.rs"
+
+[[bin]]
+name = "abc032_d"
+path = "src/abc032/d.rs"
+
+[[bin]]
+name = "abc032_e"
+path = "src/abc032/e.rs"
+
+[[bin]]
+name = "abc032_f"
+path = "src/abc032/f.rs"
+
+[[bin]]
+name = "abc032_g"
+path = "src/abc032/g.rs"
+
+[[bin]]
+name = "abc032_h"
+path = "src/abc032/h.rs"
+
+[[bin]]
+name = "abc384_a"
+path = "src/abc384/a.rs"
+
+[[bin]]
+name = "abc384_b"
+path = "src/abc384/b.rs"
+
+[[bin]]
+name = "abc384_c"
+path = "src/abc384/c.rs"
+
+[[bin]]
+name = "abc384_d"
+path = "src/abc384/d.rs"
+
+[[bin]]
+name = "abc384_e"
+path = "src/abc384/e.rs"
+
+[[bin]]
+name = "abc384_f"
+path = "src/abc384/f.rs"
+
+[[bin]]
+name = "abc384_g"
+path = "src/abc384/g.rs"
+
+[[bin]]
+name = "abc384_h"
+path = "src/abc384/h.rs"
+
+[[bin]]
+name = "abc031_a"
+path = "src/abc031/a.rs"
+
+[[bin]]
+name = "abc031_b"
+path = "src/abc031/b.rs"
+
+[[bin]]
+name = "abc031_c"
+path = "src/abc031/c.rs"
+
+[[bin]]
+name = "abc031_d"
+path = "src/abc031/d.rs"
+
+[[bin]]
+name = "abc031_e"
+path = "src/abc031/e.rs"
+
+[[bin]]
+name = "abc031_f"
+path = "src/abc031/f.rs"
+
+[[bin]]
+name = "abc031_g"
+path = "src/abc031/g.rs"
+
+[[bin]]
+name = "abc031_h"
+path = "src/abc031/h.rs"
+
+[[bin]]
+name = "abc030_a"
+path = "src/abc030/a.rs"
+
+[[bin]]
+name = "abc030_b"
+path = "src/abc030/b.rs"
+
+[[bin]]
+name = "abc030_c"
+path = "src/abc030/c.rs"
+
+[[bin]]
+name = "abc030_d"
+path = "src/abc030/d.rs"
+
+[[bin]]
+name = "abc030_e"
+path = "src/abc030/e.rs"
+
+[[bin]]
+name = "abc030_f"
+path = "src/abc030/f.rs"
+
+[[bin]]
+name = "abc030_g"
+path = "src/abc030/g.rs"
+
+[[bin]]
+name = "abc030_h"
+path = "src/abc030/h.rs"
+
+[[bin]]
+name = "abc385_a"
+path = "src/abc385/a.rs"
+
+[[bin]]
+name = "abc385_b"
+path = "src/abc385/b.rs"
+
+[[bin]]
+name = "abc385_c"
+path = "src/abc385/c.rs"
+
+[[bin]]
+name = "abc385_d"
+path = "src/abc385/d.rs"
+
+[[bin]]
+name = "abc385_e"
+path = "src/abc385/e.rs"
+
+[[bin]]
+name = "abc385_f"
+path = "src/abc385/f.rs"
+
+[[bin]]
+name = "abc385_g"
+path = "src/abc385/g.rs"
+
+[[bin]]
+name = "abc385_h"
+path = "src/abc385/h.rs"

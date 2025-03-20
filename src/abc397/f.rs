@@ -32,7 +32,7 @@ fn main() {
 fn solve_kyopro_friends(n: usize, a: Vec<usize>) {
 
     // 2025-03-19 12:30-12:50
-    // 2025-03-19 19:55-
+    // 2025-03-19 19:55-21:00
 
     let mut set_head = BTreeSet::new();
     let mut set_tail = BTreeSet::new();

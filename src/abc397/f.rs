@@ -24,6 +24,78 @@ fn main() {
         n: usize,
         a: [usize; n],
     }
+    // solve_mine(n,a);
+    solve_kyopro_friends(n,a); // 競プロフレンズの解法の方が、直感的に分かりやすい。自分のは、証明が怪しい。
+    // https://x.com/kyopro_friends/status/1900907191932252246
+}
+
+fn solve_kyopro_friends(n: usize, a: Vec<usize>) {
+
+    // 2025-03-19 12:30-12:50
+    // 2025-03-19 19:55-
+
+    let mut set_head = BTreeSet::new();
+    let mut set_tail = BTreeSet::new();
+    let mut head = vec![0; n]; // head[i] := 0からiまでに含まれる種類数
+    let mut tail = vec![0; n]; // tail[i] := iからn-1までに含まれる種類数
+    let mut pos = vec![BTreeSet::new(); n+1];
+    for i in 0..n {
+        set_head.insert(a[i]);
+        set_tail.insert(a[n-1-i]);
+        head[i] = set_head.len();
+        tail[n-1-i] = set_tail.len();
+        pos[a[i]].insert(i);
+    }
+    // println!("head = {:?}", head);
+    // println!("tail = {:?}", tail);
+
+    // dp[i][j] := a[0] ~ a[i] を、a[0],..,a[j-1] と a[j],..,a[i] で分けたときの種類数の和
+    // dp[i+1][j] = dp[i][j] + 0 or 1           (a[j],..,a[i] にa[i+1] が含まれていなければ+1, 含まれていたら+0)
+    // dp[i+1][j-1] = dp[i+1][j-1] + 0 or 1     (a[j-1],..,a[i] にa[i+1] が含まれていなければ+1, 含まれていたら+0)
+    // dp[i+1][j-2] = dp[i+1][j-2] + 0 or 1     (a[j-2],..,a[i] にa[i+1] が含まれていなければ+1, 含まれていたら+0)
+    // 後ろの人たちは+1されやすいけど、前の方の人たちは、+0になりがち。
+
+    // dp[0][0] = 無
+    // dp[1][0] = 無
+    // dp[1][1] = 2
+    // dp[2][0] = 無
+    // dp[2][1] = dp[1][1] + 0 or 1 (a[2] が 1..=1 にいれば0, いなければ1)
+    // dp[2][2] = head[1] + 1 
+    // dp[3][0] = 無
+    // dp[3][1] = dp[2][1] + 0 or 1 (a[3] が 1..=2 にいれば0, いなければ1)
+    // dp[3][2] = dp[2][2] + 0 or 1 (a[3] が 2..=2 にいれば0, いなければ1)
+    // dp[3][3] = head[2] + 1
+
+    let mut init_vector = vec![0; n];
+    init_vector[1] = 2;
+    let mut dp = lazy_segment_tree::new_range_increment_update_and_range_maximum_query_from_vec(&init_vector);
+    let mut ans = 2 + tail[2] as isize;
+    for i in 2..n-1 {
+
+        // println!("");
+        let val = head[i-1] as isize;
+        dp.range_update(i, i, val);
+
+        // max_ind := 0..=i-1 の間で x が最後に出てくる場所。
+        if let Some(&max_ind) = pos[a[i]].range(1..i).rev().next() {
+            // println!("max_ind = {:?}", max_ind);
+            dp.range_update(max_ind+1, i, 1);
+        }
+        else {
+            dp.range_update(1, i, 1);
+        }
+
+
+        let temp = dp.range_query(0, i) + tail[i+1] as isize;
+        // println!("(i, temp) = {:?}", (i, temp));
+        // dp.print_all_single_queries();
+        ans = max(ans, temp);
+    }
+    println!("{}", ans);
+
+}
+
+fn solve_mine(n: usize, a: Vec<usize>) {
 
     let mut btree: BTreeMap<usize, usize> = BTreeMap::new();
     let mut graph: Vec<Vec<usize>> = vec![vec![]; n]; // graph[v] := 「a[v] == a[i]となるような、v<iとなる最小のiを格納した配列。 無ければ空配列。」
@@ -73,9 +145,9 @@ fn main() {
         ans = max(ans, temp);
     }
     println!("{}", ans);
-
-
 }
+
+
 
 // 抽象化した遅延評価セグメント木を実装する
 // 参考実装 (ACLのC++のコードと、kenkooooさんのRust化されたコード)

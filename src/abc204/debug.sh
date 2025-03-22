@@ -3,7 +3,7 @@
 # How to use:
 #     (1) Copy the following 3 scripts to target contest directry.
 #     $ cp make_testcase.py solver.py debug.sh ./abcXXX/
-#     $ cp ../make_testcase.py ../debug.sh ../solver.py ./
+#     $ cp ../make_testcase.py ../solver.py ../debug.sh ./
 #     (2) Create the correct Python or Rust script (naive solution or someone else's AC solution)
 #     $ code solver.py 
 #     $ code h.rs 
@@ -47,6 +47,14 @@ while true; do
 
     # (4)自分の解と、誰かのACコードの解が異なる値になった場合、ループを抜ける
     # if [ "${my_output}" -ne "${ac_output}" ]; then
+    if [ "${my_output}" == "" ]; then
+        echo Runtime error occured in my_output. 
+        break
+    fi
+    if [ "${ac_output}" == "" ]; then
+        echo Runtime error occured in ac_output. 
+        break
+    fi
     if [ "${my_output}" != "${ac_output}" ]; then
         break
     fi

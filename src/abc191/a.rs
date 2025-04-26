@@ -14,7 +14,24 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // ばちゃ
+    // 2025-04-25 0:29-
     input! {
-        
+        v: usize,
+        t: usize,
+        s: usize,
+        d: usize,
     }
+    let d0 = v * t;
+    let d1 = v * s;
+
+    if d0 <= d && d <= d1 {
+        println!("No");
+    }
+    else {
+        println!("Yes");
+
+    }
+
+
 }

@@ -15,6 +15,14 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        x: usize,
+        a: [usize; n],
     }
+    let mut anss = a.into_iter().filter(|&ai| ai != x).collect::<Vec<usize>>();
+    for ai in anss {
+        print!("{} ",ai);
+    }
+
+
 }

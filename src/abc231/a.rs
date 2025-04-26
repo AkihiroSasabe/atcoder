@@ -14,7 +14,11 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-04-10 20:15- バチャ
     input! {
-        
+        d: f64,
     }
+    let ans = d /100.0;
+    println!("{}", ans);
+
 }

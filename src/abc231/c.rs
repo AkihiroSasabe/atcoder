@@ -15,6 +15,16 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        q: usize,
+        mut a: [usize; n],
+        x: [usize; q],
     }
+    a.sort();
+    for i in 0..q {
+        let ind = a.lower_bound(&x[i]);
+        let ans = n - ind;
+        println!("{}", ans);
+    }
+
 }

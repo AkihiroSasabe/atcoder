@@ -15,6 +15,22 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        s: [Chars; n]
     }
+    let mut btree = BTreeMap::new();
+    for si in s {
+        *btree.entry(si).or_insert(0) += 1;
+    }
+
+    let mut heap = BinaryHeap::new();
+    for (name, num) in btree {
+        heap.push((num, name));
+    }
+    if let Some((num, name)) = heap.pop() {
+        for nn in name {
+            print!("{}", nn);
+        }
+    }
+
 }

@@ -14,7 +14,22 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-05-03 11:53-
     input! {
-        
+        a: usize,
+        b: usize,
+        c: usize,
+        x: usize,
+    }
+    if x <= a {
+        println!("1.0");
+    }
+    else if x > b {
+        println!("0.0");
+    }
+    else {
+        let bottom = b - (a + 1) + 1;
+        let ans = c as f64 / bottom as f64;
+        println!("{}", ans);
     }
 }

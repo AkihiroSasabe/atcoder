@@ -15,6 +15,9 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        mut s: Chars
     }
+    s.sort();
+    let ans = s.iter().collect::<String>();
+    println!("{}", ans);
 }

@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_imports)]
+use num::Integer;
 use proconio::input;
 use itertools::Itertools;
 use std::cmp::{max, min};
@@ -15,6 +16,8 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        x: isize
     }
+    let ans = x.div_floor(&10);
+    println!("{}", ans);
 }

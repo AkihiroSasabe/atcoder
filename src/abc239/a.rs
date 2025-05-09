@@ -14,7 +14,10 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-05-08 23:09-    バチャ
     input! {
-        
+        h: usize
     }
+    let ans = ((h * (12800000 + h)) as f64).sqrt();
+    println!("{}", ans);
 }

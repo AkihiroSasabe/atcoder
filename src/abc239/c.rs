@@ -15,6 +15,23 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        x1: isize,
+        y1: isize,
+        x2: isize,
+        y2: isize,
     }
+
+    let xys = [(2,1),(1,2),(-1,2),(-2,1),(-2,-1),(-1,-2),(1,-2),(2,-1)];
+
+    for (dx,dy) in xys {
+        let xc = x1 + dx;
+        let yc = y1 + dy;
+        if (x2 - xc) * (x2 - xc) + (y2 - yc) * (y2 - yc) == 5 {
+            println!("Yes");
+            return;
+        }
+
+    }
+    println!("No");
+
 }

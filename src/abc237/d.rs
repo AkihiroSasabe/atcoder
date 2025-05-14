@@ -15,6 +15,24 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        s: Chars
     }
+
+    let mut queue = VecDeque::new();
+    queue.push_back(n);
+    for i in (0..n).rev() {
+        if s[i] == 'R' {
+            // 一番左にiを追加
+            queue.push_front(i);
+        }
+        else {
+            queue.push_back(i);
+        }
+    }
+    while let Some(ans) = queue.pop_front() {
+        print!("{} ", ans);
+    }
+    
+
 }

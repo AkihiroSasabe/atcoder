@@ -14,7 +14,15 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-05-09 23:24-
     input! {
-        
+        n: isize
     }
+    if - (1 << 31) <= n && n < (1 << 31) {
+        println!("Yes");
+    }
+    else {
+        println!("No");
+    }
+
 }

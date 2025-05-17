@@ -15,6 +15,28 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        a: [usize; n],
+        b: [usize; n],
     }
+    let mut ans  = 0;
+    let mut ans2  = 0;
+
+    for i in 0..n {
+        if a[i] == b[i] {
+            ans += 1;
+        }
+    }
+
+    for i in 0..n {
+        for j in 0..n {
+            if i == j {continue}
+            if a[i] == b[j] {
+                ans2 += 1;
+            }    
+        }
+    }
+    println!("{}", ans);
+    println!("{}", ans2);
+
 }

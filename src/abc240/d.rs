@@ -15,6 +15,41 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        a: [usize; n],
     }
+    let mut stack = vec![];
+
+    for i in 0..n {
+        if let Some((v, num)) = stack.pop() {
+            if v == a[i] {
+                if num == v - 1 {
+                    // 消す
+                    for _ in 0..num-1 {
+                        stack.pop();
+                    }
+                }
+                else {
+                    // 追加する
+                    stack.push((v, num));
+                    stack.push((a[i], num+1));                    
+                }
+            }
+            else {
+                // 追加する
+                stack.push((v, num));
+                stack.push((a[i], 1));
+            }
+        }
+        else {
+            stack.push((a[i], 1));
+        }
+        // println!("stack = {:?}", stack);
+        println!("{}",stack.len());
+    }
+
+
+
+
+
 }

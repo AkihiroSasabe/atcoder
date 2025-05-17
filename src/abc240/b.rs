@@ -15,6 +15,12 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        a: [usize; n],
     }
+    let mut set = BTreeSet::new();
+    for i in 0..n {
+        set.insert(a[i]);
+    }
+    println!("{}", set.len());
 }

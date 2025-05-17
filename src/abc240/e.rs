@@ -41,8 +41,6 @@ fn main() {
     for i in 0..n {
         println!("{} {}", lr_list[i][0] + 1, lr_list[i][1] + 1)
     }
-    
-
 }
 
 

@@ -15,6 +15,14 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
     }
+
+    let mut ans = 0;
+    for a in 1..n {
+
+        let num_b = if n % a != 0 {n / a} else {n / a - 1};
+        ans += num_b;
+    }
+    println!("{}", ans);
 }

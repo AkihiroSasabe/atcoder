@@ -14,7 +14,18 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-05-22 バチャ
     input! {
-        
+        s: Chars
+    }
+    let n = s.len();
+    for i in 0..n {
+        print!("{}", s[i]);
+    }
+    if s[n-1] == 's' {
+        println!("es");
+    }
+    else {
+        println!("s");
     }
 }

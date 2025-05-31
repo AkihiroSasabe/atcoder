@@ -15,6 +15,23 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
+        n: usize,
         
     }
+    // let mut s = vec![];
+    // let mut t = vec![];
+    let mut ts = vec![];
+    for i in 0..n {
+        input!{
+            si: Chars,
+            ti: usize,
+        }
+        // s.push(si);
+        // t.push(ti);
+        ts.push((ti, si));
+    }
+    ts.sort();
+    ts.reverse();
+    println!("{}", ts[1].1.iter().collect::<String>());
+
 }

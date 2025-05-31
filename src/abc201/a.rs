@@ -14,7 +14,17 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 開始時刻: 2025-05-30 20:04:00
     input! {
-        
+        mut a: [usize; 3]
     }
+    a.sort();
+    if a[2] - a[1] == a[1] - a[0] {
+        println!("Yes");
+    }
+    else {
+        println!("No");
+
+    }
+
 }

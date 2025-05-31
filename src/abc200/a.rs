@@ -14,7 +14,10 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-05-28 20:05- バチャ
     input! {
-        
+        n: usize
     }
+    let ans = (n - 1) / 100 + 1;
+    println!("{}", ans);
 }

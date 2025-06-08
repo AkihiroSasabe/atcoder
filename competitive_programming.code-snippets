@@ -22,12 +22,19 @@
 		],
 		"description": "print ans"
 	},
-	"print to debug": {
+	"print for debug": {
 		"prefix": "print_debug",
 		"body": [
 			"println!(\"$1 = {:?}\", $1);"
 		],
-		"description": "print to debug"
+		"description": "print for debug"
+	},
+	"print for multiple debug": {
+		"prefix": "print_mutlti_debug",
+		"body": [
+			"println!(\"($1) = {:?}\", ($1));"
+		],
+		"description": "print for multiple debug"
 	},
 	"Input 2 lists": {
 		"prefix": "input2",
@@ -45,17 +52,36 @@
 		],
 		"description": "Input 2 lists"
 	},
+	"Input 3 lists": {
+		"prefix": "input3",
+		"body": [
+			"let mut ${1:x} = vec![];",
+			"let mut ${2:y} = vec![];",
+			"let mut ${3:z} = vec![];",
+			"for i in 0..${4:q} {",
+			"    input!{",
+			"        ${1:x}i: usize,",
+			"        ${2:y}i: usize,",
+			"        ${3:z}i: usize,",
+			"    }",
+			"    ${1:x}.push(${1:x}i);",
+			"    ${2:y}.push(${2:y}i);",
+			"    ${3:z}.push(${3:z}i);",
+			"}"
+		],
+		"description": "Input 3 lists"
+	},
 	"Input graph": {
 		"prefix": "input_graph",
 		"body": [
 			"let mut graph = vec![vec![]; ${1:n}];",
 			"for i in 0..${2:m} {",
 			"    input!{",
-			"        ${3:u}i: usize,",
-			"        ${4:v}i: usize,",
+			"        ${3:u}i: Usize1,",
+			"        ${4:v}i: Usize1,",
 			"    }",
-			"    graph[${3:u}i-1].push(${4:v}i-1);",
-			"    graph[${4:v}i-1].push(${3:u}i-1);",
+			"    graph[${3:u}i].push(${4:v}i);",
+			"    graph[${4:v}i].push(${3:u}i);",
 			"}"
 		],
 		"description": "Input graph"
@@ -70,8 +96,8 @@
 			"        ${4:v}i: Usize1,",
 			"        ${5:w}i: isize,",
 			"    }",
-			"    graph[${3:u}i].push((${4:v}i, (${5:w}i));",
-			"    // graph[${4:v}i].push(${3:u}i, (${5:w}i));",
+			"    graph[${3:u}i].push((${4:v}i, ${5:w}i));",
+			"    // graph[${4:v}i].push((${3:u}i, ${5:w}i));",
 			"}"
 		],
 		"description": "Input weighted graph"

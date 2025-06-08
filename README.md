@@ -16,3 +16,9 @@ $ cargo run --bin make_contest_folder 777
 VSCode用のスニペットを用意している。 [competitive_programming.code-snippets](competitive_programming.code-snippets) を参照  
 例えばWindowsでVSCodeなら、以下にスニペットが保存されている。  
 `/C:/Users/<ユーザー名>/AppData/Roaming/Code/User/snippets/competitive_programming.code-snippets`
+
+参考記事:
+- [VS Codeのユーザースニペット機能の使い方メモ](https://qiita.com/12345/items/97ba616d530b4f692c97)  
+- [snippet-generator](https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode)  
+
+

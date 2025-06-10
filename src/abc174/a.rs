@@ -14,7 +14,15 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // ばちゃ
+    // 2025-06-10 18:15-19:55
     input! {
-        
+        x: isize
+    }
+    if x >= 30 {
+        println!("Yes");
+    }
+    else {
+        println!("No");
     }
 }

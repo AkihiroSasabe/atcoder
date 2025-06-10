@@ -15,6 +15,25 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        d: isize,
     }
+    let mut x = vec![];
+    let mut y = vec![];
+    for i in 0..n {
+        input!{
+            xi: isize,
+            yi: isize,
+        }
+        x.push(xi);
+        y.push(yi);
+    }
+
+    let mut ans = 0;
+    for i in 0..n {
+        if x[i] * x[i] + y[i] * y[i] <= d * d {
+            ans += 1;
+        }
+    }
+    println!("{}", ans);
 }

@@ -14,7 +14,17 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // バチャ
+    // 2025-06-11 18:40-20:20
     input! {
-        
+        x: usize,
     }
+
+    if x % 100 == 0 {
+        println!("100");
+    }
+    else {
+        println!("{}", 100 - x % 100);
+    }
+
 }

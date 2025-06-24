@@ -14,6 +14,37 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // solve();
+    solve_2nd();
+
+}
+
+fn solve_2nd() {
+    input! {
+        n: usize,
+        m: usize,
+        a: [usize; n],
+        b: [usize; m],
+    }
+    
+    // 最終的な長さで考えようか.
+    let min_len = min(n, m);
+    let inf = 1 << 60;
+
+    // dp[i][j] := i と j がマッチしているとき、消した個数の最小は?
+    let mut dp = vec![vec![inf; m]; n];
+
+    for j in 0..m {
+        
+    }
+
+
+
+
+
+}
+
+fn solve() {
     // 2024-03-16 15:24-16:14 (50min, 答えここからみた)
     // 2024-03-20 15:41-
     // 2024-04-09 12:15-12:54 (39min, LCS: 最長共通部分列問題の勉強をしてから実装。)

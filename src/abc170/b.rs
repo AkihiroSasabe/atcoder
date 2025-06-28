@@ -15,6 +15,19 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        x: isize, // 動物
+        y: isize, // 足の本数
     }
+
+    for num_kame in 0..x+1 {
+        let num_turu = x - num_kame;
+
+        let num_foot = num_turu * 2 + num_kame * 4;
+        if y == num_foot {
+            println!("Yes");
+            return;
+        }
+    }
+    println!("No");
+
 }

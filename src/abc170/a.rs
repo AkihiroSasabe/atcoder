@@ -14,7 +14,14 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // 2025-06-27 バチャ
     input! {
-        
+        x: [usize; 5]
+    }
+    for i in 0..5 {
+        if x[i] == 0 {
+            println!("{}",i+1);
+            return;
+        }
     }
 }

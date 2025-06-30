@@ -26,7 +26,7 @@ fn main() {
 
     // 2025-06-29 15:16-16:36 (80min)
     // 競プロフレンズ氏のツイートをチラ見した。
-    // 
+    // 区間篩は、アルゴ式にも書いてある。 https://algo-method.com/tasks/332/editorial
     input! {
         l: usize,
         r: usize,

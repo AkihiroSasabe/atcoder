@@ -15,6 +15,13 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        // x: usize,
+        // y: usize,
+        // z: usize,
+        mut a: [usize ;3]
     }
+    a.swap(0,1);
+    a.swap(0,2);
+    println!("{}", a.iter().map(|x| x.to_string()).collect::<Vec<String>>().join(" "));
+
 }

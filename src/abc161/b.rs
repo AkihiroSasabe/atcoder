@@ -15,6 +15,22 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        n: usize,
+        m: usize,
+        mut a: [usize; n],
+    }
+    let mut cnt = 0;
+
+    let sum = a.iter().sum::<usize>();
+
+    for i in 0..n {
+        if 4*m *a[i] >= sum {
+            cnt += 1;
+        } 
+    }
+    if cnt >= m {
+        println!("Yes");
+    } else {
+        println!("No");
     }
 }

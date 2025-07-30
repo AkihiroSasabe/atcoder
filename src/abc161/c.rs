@@ -15,6 +15,30 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        mut n: isize,
+        k: isize
     }
+
+    let mut ans = n;
+    if n > k {
+        n = n - (n / k) * k;
+        ans = min(ans, n)
+    }
+
+    if ans == 0 {
+        println!("0");
+        return;
+    }
+
+    for _ in 0..10 {
+        n = (k - n).abs();
+        ans = min(ans, n);
+    }
+    println!("{}", ans);
+
+    
+
+
+
+
 }

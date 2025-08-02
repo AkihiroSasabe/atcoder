@@ -15,6 +15,14 @@ use std::mem::swap;
 use superslice::*;
 fn main() {
     input! {
-        
+        s: Chars,
     }
+    let mut ans = 0;
+    for i in 0..s.len()/2 {
+        if s[i] != s[s.len()-1-i] {
+            ans += 1;
+        }
+    }
+    println!("{}", ans);
+
 }

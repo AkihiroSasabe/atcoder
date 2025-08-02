@@ -14,7 +14,15 @@ use std::f64::consts::PI;
 use std::mem::swap;
 use superslice::*;
 fn main() {
+    // ばちゃ
+    // 2025-08-02 10:44-
     input! {
-        
+        a: [usize; 3]
+    }
+    let sum = a.iter().sum::<usize>();
+    if sum >= 22 {
+        println!("bust");
+    } else {
+        println!("win");
     }
 }

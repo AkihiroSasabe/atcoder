@@ -50,6 +50,22 @@
 		],
 		"description": "print for multiple debug"
 	},
+	"debug_macro": {
+		"prefix": "debug_macro",
+		"body": [
+			"#[cfg(debug_assertions)]",
+			""
+		],
+		"description": "debug_macro"
+	},
+	"release_macro": {
+		"prefix": "release_macro",
+		"body": [
+			"#[cfg(not(debug_assertions))]",
+			""
+		],
+		"description": "release_macro"
+	},
 	"Binary Search": {
 		"prefix": "meguru_binary_search",
 		"body": [

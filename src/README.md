@@ -30,10 +30,3 @@ bash debug.sh <デバッグしたい問題名>
 ```
 
 ### (2-4)生成された`temp.txt`に、両者の解が異なるケースが保存されるので、それを使って頑張ってデバッグする
-
-
-## (3) スニペットの準備
-VSCodeで、Ctrl + Shift + P で以下のように検索  
-> `Snippets: Configure Snippets`
-
-`./src/snippets`の内容をコピペする。 

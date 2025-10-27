@@ -1,0 +1,21 @@
+{
+    "files.watcherExclude": {
+		"**/target/**": true
+	},
+	// "rust-analyzer.check.command": "clippy",
+	"rust-analyzer.check.command": "check", // clippy は時間がかかるので、check に変更
+    "rust-analyzer.checkOnSave": true,
+	"rust-analyzer.cargo.targetDir": "/workspace-cache/target/rust-analyzer", // rust-analyzer用のビルド出力(target)を作る。cargo run と rust-analyzerのcargo check (or clippy) が排他ロックを掛け、"Blocking waiting for file lock on build directory" というエラーメッセージが発生するので。
+	"editor.formatOnSave": false,
+    // "editor.tabCompletion": "on",
+    // "github.copilot.enable": {
+    //     "*": true,
+    //     "plaintext": false,
+    //     "markdown": false,
+    //     "scminput": false
+    // },
+    // "github.copilot.nextEditSuggestions.enabled": true,
+    // "rust-analyzer.files.excludeDirs": [
+    //     "**/.git"
+    // ],
+}

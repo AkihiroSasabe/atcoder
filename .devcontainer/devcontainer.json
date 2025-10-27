@@ -1,0 +1,59 @@
+{
+    // 参考: 
+    // 「岩井星人」 https://github.com/yiwiy9/atcoder-rust-devcontainer/blob/main/.devcontainer/devcontainer.json
+    "name": "atcoder_rust_ms_latest_main",
+    "build": {
+        "dockerfile": "Dockerfile",
+        // "args": {
+        //     "USERNAME": "vscode"
+        // }
+    },
+
+    // // デバッグ（CodeLLDB）に必要な権限
+    // "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+
+    // "remoteUser": "vscode",
+    // "updateRemoteUserUID": true,
+
+    // ビルド高速化（キャッシュ用ボリューム）
+    // 参考
+    // 公式の日本語訳: https://matsuand.github.io/docs.docker.jp.onthefly/storage/
+    // 非公式の解説記事 https://qiita.com/aki_55p/items/63c47214cab7bcb027e0
+    // Dockerのストレージは3種類
+    // [1] ボリューム (type=volume): Dockerが管理するディレクトリをマウント。
+    //      ・ホストのどこにあるかを意識せずに永続化。コンテナを作り直しても残る。
+    //      ・ボリュームは、バインドよりキャッシュが高速らしい(apt,pipのダウンロードやcargoのコンパイル)。
+    // [1-1] 名前付きボリューム: 名前を指定して作成するボリューム。名前はsrcで指定。
+    // [1-2] 匿名ボリューム: 名前を指定せずに作成するボリューム。srcを省略して指定。(他のプロセスからはアクセスできない。あまり使い時がなさそう。1回限りのジョブで外だししたい時くらい?)
+    // [2] バインドマウント (type=bind): ホストの実ディレクトリをマウント。
+    // [3] tmpfs (type=tmpfs): 一時的なファイルシステムをマウント。
+    // 現在は、-vオプションより、--mounts オプションの使用が推奨されている
+    // src := 名前付きボリュームならその名前。匿名ボリュームなら省略。バイウンドマウントならホストの実ディレクトリ。
+    // dst := コンテナ内のディレクトリ
+    // 
+    // 以下、名前付きボリュームでマウント。bindマウントすると、ホスト側のディレクトリのパーミッションに依存してしまうため。
+    // localWorkspaceFolder := プロジェクトの絶対パス
+    // localWorkspaceFolderBasename := localWorkspaceFolderBasenameの末尾のフォルダ名 
+    "mounts": [
+        "source=/home/akki/projects/,target=/home/vscode/projects/,type=bind",
+        "source=atcoder_rust_ms_latest_main-rust-cargo-registry,target=/home/vscode/.cargo/registry,type=volume",
+        "source=atcoder_rust_ms_latest_main-rust-cargo-git,target=/home/vscode/.cargo/git,type=volume",
+        "source=atcoder_rust_ms_latest_main-rust-target,target=/workspace-cache/target,type=volume"
+        // "source=atcoder_rust_ms_latest_main-rust-target,target=${containerWorkspaceFolder}/target,type=volume"
+    ],
+    "postStartCommand": "sudo chown -R vscode:vscode /workspace-cache /home/vscode/.cargo",
+    "customizations": {
+        "vscode": {
+            // 参考: 「Dev Container で VSCode 拡張機能付きの Rust 開発環境を構築する」
+            // https://zenn.dev/codemountains/articles/5995bc3e6b3aa3
+            "extensions": [
+                "rust-lang.rust-analyzer", // コード補完、シンタックスハイライト
+                "vadimcn.vscode-lldb", // コンパイル言語をデバッグするための拡張機能。ブレークポイントを使う。
+                "tamasfe.even-better-toml", // TOML ファイルでコード補完
+                "fill-labs.dependi", // クレート（ライブラリ）を管理
+                "eamodio.gitlens",
+                "ms-python.python"
+            ]
+        }
+    }
+}

@@ -52,7 +52,9 @@
                 "tamasfe.even-better-toml", // TOML ファイルでコード補完
                 "fill-labs.dependi", // クレート（ライブラリ）を管理
                 "eamodio.gitlens",
-                "ms-python.python"
+                "ms-python.python",
+                "visualstudioexptteam.vscodeintellicode",
+                "visualstudioexptteam.intellicode-api-usage-examples"
             ]
         }
     }

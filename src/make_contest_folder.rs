@@ -49,6 +49,7 @@ use num::{BigUint, ToPrimitive, Integer};
 use num_bigint::ToBigUint;
 fn main() {
     input! {
+        n: usize,
         
     }
 }"
